@@ -1,0 +1,41 @@
+html,body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+span {
+	font-family: Arial;
+	font-weight: bolder;
+	font-size: 4.5em;
+	color: white;
+	cursor: default;
+	user-select: none;
+	transition: all 500ms;
+}
+
+span:hover {
+	color: #ddd;
+	text-shadow: 0px 0px 1.5em #fff;
+	animation: default_animation 1000ms ease;
+}
+
+@keyframes default_animation {
+	0% {
+		font-size: 4.5em;
+	}
+	50% {
+		font-size: 5em;
+	}
+	100% {
+		font-size: 4.5em;
+	}
+}
