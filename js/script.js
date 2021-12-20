@@ -19,7 +19,7 @@ $(window).on('load', function() {
 	function hitTheBerkayRandomly(){
 		if(win === false)
 		{
-			var damage = Math.floor(Math.random() * 100);
+			var damage = Math.floor(Math.random() * 10);
 			var Oof = new Audio('sound/oof.wav');
 			Oof.play();
 			berkayHealth = berkayHealth - damage;
