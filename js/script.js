@@ -20,7 +20,7 @@ $(window).on('load', function() {
 		if(win === false)
 		{
 			var damage = Math.floor(Math.random() * 12);
-			var Oof = new Audio('sound/yamete.wav','sound/yahh.wav','sound/ahh.wav');
+			var Oof = new Audio(* 'sound/yahh.wav','sound/yahh.wav','sound/ahh.wav');
 			Oof.play();
 			berkayHealth = berkayHealth - damage;
 			updateHealth();
@@ -54,8 +54,8 @@ $(window).on('load', function() {
 		$('#vid-2').css('display', 'block');
 		$('.win').css('display','block');
 		$(berkay).attr('src', 'images/PC2.png');
-		var dansAudio = new Audio('sound/yamete_kudasai.wav');
-		dansAudio.loop = false;
+		var dansAudio = new Audio('sound/yamete_kudasai.mp3');
+		dansAudio.loop = true;
 	}
 
 })
