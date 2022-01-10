@@ -20,7 +20,7 @@ $(window).on('load', function() {
 		if(win === false)
 		{
 			var damage = Math.floor(Math.random() * 12);
-			var Oof = new Audio(* 'sound/yahh.wav','sound/yahh.wav','sound/ahh.wav');
+			var Oof = new Audio('sound/yahh.wav');
 			Oof.play();
 			berkayHealth = berkayHealth - damage;
 			updateHealth();
