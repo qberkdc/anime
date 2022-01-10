@@ -4,7 +4,7 @@ $(window).on('load', function() {
 	$('#vid-2').css('display', 'none');
 	$('.win').css('display','none');
 
-	var berkayHealth = 500;
+	var berkayHealth = 300;
 	var win = false;
 	var berkay = $('#berkay');
 
@@ -19,7 +19,7 @@ $(window).on('load', function() {
 	function hitTheBerkayRandomly(){
 		if(win === false)
 		{
-			var damage = Math.floor(Math.random() * 21);
+			var damage = Math.floor(Math.random() * 12);
 			var Oof = new Audio('sound/ahh.wav');
 			Oof.play();
 			berkayHealth = berkayHealth - damage;
