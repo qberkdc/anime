@@ -35,7 +35,7 @@ $(window).on('load', function() {
 
 	function printDamage(damage){
 		$('.damage').html(`Damage -${damage}`);
-		$('.damage').css('animation', 'damage_fade 1500ms');
+		$('.damage').css('animation', 'damage_fade 200;ms');
 		$(berkay).attr('src', 'images/anime_hurt.png');
 		setTimeout(() => {
 			$('.damage').html('');
@@ -46,7 +46,7 @@ $(window).on('load', function() {
 			}else {
 				$(berkay).attr('src', 'images/anime_dead.png');
 			}
-		}, 500);
+		}, 300);
 	}
 
 	function Win(){
@@ -55,7 +55,7 @@ $(window).on('load', function() {
 		$('.win').css('display','block');
 		$(berkay).attr('src', 'images/anime_dead.png');
 		var dansAudio = new Audio('sound/yamete_kudasai.wav');
-		dansAudio.loop = true;
+		dansAudio.loop = false;
 	}
 
 })
