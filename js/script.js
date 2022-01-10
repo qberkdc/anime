@@ -35,7 +35,7 @@ $(window).on('load', function() {
 
 	function printDamage(damage){
 		$('.damage').html(`Damage -${damage}`);
-		$('.damage').css('animation');
+		$('.damage').css('animation', 'damage_fade 1500ms');
 		$(berkay).attr('src', 'images/anime_hurt.png');
 		setTimeout(() => {
 			$('.damage').html('');
