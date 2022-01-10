@@ -20,7 +20,7 @@ $(window).on('load', function() {
 		if(win === false)
 		{
 			var damage = Math.floor(Math.random() * 12);
-			var Oof = new Audio('sound/ahh.wav');
+			var Oof = new Audio('sound/ahh.wav', 'sound/yahhh.wav', 'sound/yamete.wav');
 			Oof.play();
 			berkayHealth = berkayHealth - damage;
 			updateHealth();
@@ -35,7 +35,7 @@ $(window).on('load', function() {
 
 	function printDamage(damage){
 		$('.damage').html(`Damage -${damage}`);
-		$('.damage').css('animation', 'damage_fade 200;ms');
+		$('.damage').css('animation', 'damage_fade 50;ms');
 		$(berkay).attr('src', 'images/anime_hurt.png');
 		setTimeout(() => {
 			$('.damage').html('');
