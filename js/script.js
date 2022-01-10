@@ -56,7 +56,6 @@ $(window).on('load', function() {
 		$(berkay).attr('src', 'images/anime_dead.png');
 		var dansAudio = new Audio('sound/el_sonu_dans.mp3');
 		dansAudio.loop = false;
-		dansAudio.play();
 	}
 
 })
