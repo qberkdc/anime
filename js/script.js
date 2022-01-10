@@ -34,7 +34,7 @@ $(window).on('load', function() {
 	}
 
 	function printDamage(damage){
-		$('.damage').html(`${damage} Damage`);
+		$('.damage').html(`Damage -${damage}`);
 		$('.damage').css('animation');
 		$(berkay).attr('src', 'images/anime_hurt.png');
 		setTimeout(() => {
@@ -55,7 +55,7 @@ $(window).on('load', function() {
 		$('.win').css('display','block');
 		$(berkay).attr('src', 'images/anime_dead.png');
 		var dansAudio = new Audio('sound/yamete_kudasai.wav');
-		dansAudio.loop = false;
+		dansAudio.loop = true;
 	}
 
 })
