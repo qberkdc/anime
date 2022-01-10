@@ -54,7 +54,7 @@ $(window).on('load', function() {
 		$('#vid-2').css('display', 'block');
 		$('.win').css('display','block');
 		$(berkay).attr('src', 'images/anime_dead.png');
-		var dansAudio = new Audio('sound/el_sonu_dans.mp3');
+		var dansAudio = new Audio('sound/yamete_kudasai.wav');
 		dansAudio.loop = false;
 	}
 
