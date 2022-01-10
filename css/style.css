@@ -20,7 +20,7 @@ body {
 }
 
 .win {
-	color: green;
+	color: blue;
 	position: absolute;
 	font-size: 3.5em;
 	top: 14%;
@@ -47,7 +47,7 @@ body {
 
 .current-health {
 	width: 100%;
-	height: 100%;
+	height: 30%;
 	background-color: red;
 }
 
