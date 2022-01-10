@@ -20,7 +20,7 @@ $(window).on('load', function() {
 		if(win === false)
 		{
 			var damage = Math.floor(Math.random() * 12);
-			var Oof = new Audio('sound/ahh.wav', 'sound/yahh.wav', 'sound/yamete.wav');
+			var Oof = new Audio('sound/yamete.wav', 'sound/yahh.wav', 'sound/ahh.wav');
 			Oof.play();
 			berkayHealth = berkayHealth - damage;
 			updateHealth();
@@ -36,15 +36,15 @@ $(window).on('load', function() {
 	function printDamage(damage){
 		$('.damage').html(`Damage -${damage}`);
 		$('.damage').css('animation', 'damage_fade 50;ms');
-		$(berkay).attr('src', 'images/anime_hurt.png');
+		$(berkay).attr('src', 'images/1641804614582.png');
 		setTimeout(() => {
 			$('.damage').html('');
 			$('.damage').css('animation', 'none');
 			if(win === false)
 			{
-				$(berkay).attr('src', 'images/anime.png');
+				$(berkay).attr('src', 'images/1641804488250.png');
 			}else {
-				$(berkay).attr('src', 'images/anime_dead.png');
+				$(berkay).attr('src', 'images/1641804802467.png');
 			}
 		}, 300);
 	}
@@ -53,7 +53,7 @@ $(window).on('load', function() {
 		$('#vid-1').css('display', 'block');
 		$('#vid-2').css('display', 'block');
 		$('.win').css('display','block');
-		$(berkay).attr('src', 'images/anime_dead.png');
+		$(berkay).attr('src', 'images/1641804802467.png');
 		var dansAudio = new Audio('sound/yamete_kudasai.wav');
 		dansAudio.loop = false;
 	}
