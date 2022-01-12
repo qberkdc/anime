@@ -55,7 +55,7 @@ $(window).on('load', function() {
 		$('.win').css('display','block');
 		$(berkay).attr('src', 'images/PC2.png');
 		var dansAudio = new Audio('sound/yamete_kudasai.mp3');
-		dansAudio.loop = true;
+		dansAudio.play()
 	}
 
 })
