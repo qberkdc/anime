@@ -116,12 +116,10 @@ $(window).on('load', function() {
 			if(berkayHealth <= 0)
 			{
 				setTimeout(() => {
-					berkayHealth = 0; //	Delay message
+					setTimeout(() => {
+						$('.health').html(`You won stage award: ${stgawrd} coin`);
+					}, 250);
 				}, 800);
-			
-				setTimeout(() => {
-					$('.health').html(`You won stage award: ${stgawrd} coin`);
-				}, 250);
 			}
 		}
 		else if(berkayHealth <= 0)
