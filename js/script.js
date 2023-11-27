@@ -15,7 +15,7 @@ $(window).on('load', function() {
 	})
 
 	function updateHealth(){
-		$('.current-health').css('width', berkayHealth)
+		$('.health').html(`${berkayHealth}/3000`);
 	}
 
 	function updateDamage(){
@@ -36,7 +36,7 @@ $(window).on('load', function() {
 			berkayHealth = berkayHealth - (damage * damage_power);
 			damage_power = damage_power + 1
 			
-			// updateHealth();
+			updateHealth();
 			updateDamage();
 			printDamage(damage * damage_power);
 			if(berkayHealth <= 0)
