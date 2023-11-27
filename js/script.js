@@ -25,7 +25,7 @@ $(window).on('load', function() {
 	})
 
 	$('#power_upgrade').on('click', function(){
-		powerUp()
+		powerUp();
 	})
 
 	function updateHealth(){
