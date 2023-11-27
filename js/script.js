@@ -110,7 +110,7 @@ $(window).on('load', function() {
 				{
 					$(berkay).attr('src', 'images/ninmy_normal.png');
 				}
-			}, 100);
+			}, 25);
 			
 			if(berkayHealth <= 0)
 			{
