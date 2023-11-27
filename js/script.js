@@ -19,7 +19,7 @@ $(window).on('load', function() {
 	}
 
 	function updateDamage(){
-		$('.damage-bar').css('width', damage_power)
+		$('.damage-bar').css('width', (damage_power * 3))
 	}
 	
 	function hitTheBerkayRandomly(){
