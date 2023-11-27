@@ -118,8 +118,8 @@ $(window).on('load', function() {
 				setTimeout(() => {
 					setTimeout(() => {
 						$('.health').html(`You won stage award: ${stgawrd} coin`);
-					}, 250);
-				}, 800);
+					}, 1500);
+				}, 1500);
 			}
 		}
 		else if(berkayHealth <= 0)
