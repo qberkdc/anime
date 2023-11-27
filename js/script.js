@@ -4,18 +4,20 @@ $(window).on('load', function() {
 	$('#vid-2').css('display', 'none');
 	$('.win').css('display','none');
 
-	var berkayHealth = 3000;
+	var berkayHealth = 300;
 	var win = false;
 	var berkay = $('#berkay');
-	var damage_power = 2;
+	var damage_power = 1;
 	var damage = 3;
+	var damage_level = 1;
+	var stage = 1;
 
 	$('#berkay').on('click', function(){
 		hitTheBerkayRandomly();
 	})
 
 	function updateHealth(){
-		$('.health').html(`${berkayHealth}/3000`);
+		$('.health').html(`Damage Lv: ${damage_level} | Stage: ${stage} | ${berkayHealth}/3000`);
 	}
 
 	function updateDamage(){
@@ -23,7 +25,8 @@ $(window).on('load', function() {
 			$('.damage-bar').css('width', (damage_power * 3))
 		}
 		else {
-			damage_power = 100;
+			damage_power = 1;
+			damage_level = damage_level + 1;
 		}
 	}
 	
@@ -38,17 +41,19 @@ $(window).on('load', function() {
 			
 			updateHealth();
 			updateDamage();
-			printDamage(damage * damage_power);
+			printDamage(damage * damage_level);
+			
 			if(berkayHealth <= 0)
 			{
-				Win();
-				win = true;
+				stage = stage + 1;
+				berkayHealth = (300 * stage);
+				printStage(stage)
 			}
 		}
 	}
 
 	function printDamage(damage){
-		$('.damage').html(`-${damage}`);
+		$('.damage').html(`${damage}`);
 		$('.damage').css('animation', 'damage_fade 50;ms');
 		$(berkay).attr('src', 'images/ninmy_hurt.png');
 		setTimeout(() => {
@@ -61,6 +66,10 @@ $(window).on('load', function() {
 				$(berkay).attr('src', 'images/ninmy_dead.png');
 			}
 		}, 300);
+	}
+
+	function printStage(next){
+		$('.health').html('Next stage: ${next}');
 	}
 
 	function Win(){
