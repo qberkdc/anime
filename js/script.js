@@ -57,6 +57,7 @@ $(window).on('load', function() {
 		if(price > coin)
 		{
 			$('.health').html(`It takes ${needs} coins to upgrade`);
+			var playAudio = new Audio('sound/upgrade_fail.mp3'); playAudio.play();
 			setTimeout(() => {
 				updateHealth();
 				touchable = 1;
@@ -66,6 +67,7 @@ $(window).on('load', function() {
 		{
 			damage_level = damage_level + 1;
 			coin = coin - price;
+			var playAudio = new Audio('sound/upgrade_success.mp3'); playAudio.play();
 			$('.health').html(`Upgrade successfull: ${damage_level} Lv`);
 			setTimeout(() => {
 				updateHealth();
@@ -102,8 +104,7 @@ $(window).on('load', function() {
 					stage = stage + 1;
 					coin = coin + stgawrd;
 					printStage(stage);
-					var dansAudio = new Audio('sound/yamete_kudasai.mp3');
-					dansAudio.play();
+					var playAudio = new Audio('sound/file.mp3'); playAudio.play();
 					$(berkay).attr('src', 'images/ninmy_dead.png');
 				}
 				else
