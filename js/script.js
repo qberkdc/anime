@@ -105,7 +105,6 @@ $(window).on('load', function() {
 					var dansAudio = new Audio('sound/yamete_kudasai.mp3');
 					dansAudio.play();
 					$(berkay).attr('src', 'images/ninmy_dead.png');
-					berkayDied = 0
 				}
 				else
 				{
