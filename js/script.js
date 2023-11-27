@@ -24,7 +24,7 @@ $(window).on('load', function() {
 		hitTheBerkayRandomly();
 	})
 
-	$('power_upgrade').on('click', function(){
+	$('#power_upgrade').on('click', function(){
 		powerUp()
 	})
 
