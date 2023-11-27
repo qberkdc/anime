@@ -45,7 +45,7 @@ $(window).on('load', function() {
 			if(berkayHealth <= 0)
 			{
 				stage = stage + 1;
-				berkayHealth = (300 * stage);
+				berkayHealth = (maxHealth * stage);
 				maxHealth = berkayHealth;
 				printStage(stage);
 				var dansAudio = new Audio('sound/yamete_kudasai.mp3');
