@@ -32,7 +32,8 @@ $(window).on('load', function() {
 			damage_power = damage_power + 1
 			
 			updateHealth();
-			printDamage(damage);
+			updateDamage();
+			printDamage(damage * damage_power);
 			if(berkayHealth <= 0)
 			{
 				Win();
