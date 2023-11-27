@@ -40,26 +40,26 @@ body {
 }
 
 .health-bar {
-	width: 300px;
-	height: 13px;
+	width: 3000px;
+	height: 9px;
 	background-color: #eee;
 }
 
 .damage_bar {
-	width: 300px;
-	height: 13px;
+	width: 100px;
+	height: 9px;
 	background-color: #eee;
 }
 
 .current-health {
-	width: 300px;
-	height: 13px;
+	width: 3000px;
+	height: 9px;
 	background-color: red;
 }
 
 .damage-bar {
-	width: 300px;
-	height: 13px;
+	width: 100px;
+	height: 9px;
 	background-color: orange;
 }
 
