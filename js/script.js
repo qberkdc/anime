@@ -7,6 +7,8 @@ $(window).on('load', function() {
 	var berkayHealth = 300;
 	var win = false;
 	var berkay = $('#berkay');
+	var damage_power = 2;
+	var damage = 3;
 
 	$('#berkay').on('click', function(){
 		hitTheBerkayRandomly();
@@ -16,13 +18,19 @@ $(window).on('load', function() {
 		$('.current-health').css('width', berkayHealth)
 	}
 
+	function updateDamage(){
+		$('.damage-bar').css('width', damage_power)
+	}
+	
 	function hitTheBerkayRandomly(){
 		if(win === false)
 		{
-			var damage = Math.floor(Math.random() * 12);
 			var Oof = new Audio('sound/yahh.wav');
 			Oof.play();
-			berkayHealth = berkayHealth - damage;
+			
+			berkayHealth = berkayHealth - (damage * damage_power);
+			damage_power = damage_power + 1
+			
 			updateHealth();
 			printDamage(damage);
 			if(berkayHealth <= 0)
