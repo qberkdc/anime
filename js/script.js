@@ -13,6 +13,8 @@ $(window).on('load', function() {
 	var damage = 3;
 	var damage_level = 1;
 	var stage = 1;
+
+	var touchable = 1;
 	
 	var coin = 0;
 	var dmgdeal = 0;
@@ -45,12 +47,15 @@ $(window).on('load', function() {
 	function powerUp(){
 		var price = 12 * damage_level;
 		var needs = price - coin;
+
+		touchable = 0;
 		
 		if(price > coin){
 			$('.health').html(`It takes ${needs} coins to upgrade`);
 			setTimeout(() => {
 				updateHealth();
-			}, 750);
+				touchable = 1;
+			}, 1200);
 		}
 		else {
 			damage_level = damage_level + 1;
@@ -58,12 +63,13 @@ $(window).on('load', function() {
 			$('.health').html(`Upgrade successfull: ${damage_level} Lv`);
 			setTimeout(() => {
 				updateHealth();
-			}, 750);
+				touchable = 1;
+			}, 1200);
 		}
 	}
 			
 	function hitTheBerkayRandomly(){
-		if(berkayHealth > 0)
+		if(berkayHealth > 0 && touchable == 1)
 		{
 			var Oof = new Audio('sound/yahh.wav');
 			Oof.play();
