@@ -47,20 +47,23 @@ $(window).on('load', function() {
 		}
 	}
 
-	function powerUp(){
+	function powerUp()
+	{
 		var price = 6 * damage_level;
 		var needs = price - coin;
 
 		touchable = 0;
 		
-		if(price > coin){
+		if(price > coin)
+		{
 			$('.health').html(`It takes ${needs} coins to upgrade`);
 			setTimeout(() => {
 				updateHealth();
 				touchable = 1;
 			}, 1500);
 		}
-		else {
+		else
+		{
 			damage_level = damage_level + 1;
 			coin = coin - price;
 			$('.health').html(`Upgrade successfull: ${damage_level} Lv`);
@@ -113,7 +116,7 @@ $(window).on('load', function() {
 			if(berkayHealth <= 0)
 			{
 				setTimeout(() => {
-					//	Delay message
+					berkayHealth = 0; //	Delay message
 				}, 800);
 			
 				setTimeout(() => {
@@ -121,7 +124,7 @@ $(window).on('load', function() {
 				}, 250);
 			}
 		}
-		else
+		else if(berkayHealth <= 0)
 		{
 			setTimeout(() => {
 				berkayHealth = (512 * stage);
