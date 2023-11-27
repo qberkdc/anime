@@ -69,7 +69,7 @@ $(window).on('load', function() {
 			Oof.play();
 			
 			berkayHealth = berkayHealth - (damage * damage_level);
-			damage_power = damage_power + 1;
+			if(dmgdeal > dmgmax - 30) damage_power = damage_power + 1;
 
 			dmgdeal = dmgdeal + (damage * damage_level)
 
