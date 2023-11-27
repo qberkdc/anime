@@ -106,6 +106,7 @@ $(window).on('load', function() {
 					printStage(stage);
 					var playAudio = new Audio('sound/file.mp3'); playAudio.play();
 					$(berkay).attr('src', 'images/ninmy_dead.png');
+					touchable = 0;
 				}
 				else
 				{
@@ -129,7 +130,8 @@ $(window).on('load', function() {
 				maxHealth = berkayHealth;
 				$(berkay).attr('src', 'images/ninmy_normal.png');
 				updateHealth()
-				berkayDied = 0
+				berkayDied = 0;
+				touchable = 1;
 			}, 6000);
 		}
 	}
