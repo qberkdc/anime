@@ -109,14 +109,17 @@ $(window).on('load', function() {
 					$(berkay).attr('src', 'images/ninmy_normal.png');
 				}
 			}, 100);
-
-			setTimeout(() => {
-				//	Delay message
-			}, 800);
 			
-			setTimeout(() => {
-				$('.health').html(`You won stage award: ${stgawrd} coin`);
-			}, 250);
+			if(berkayHealth <= 0)
+			{
+				setTimeout(() => {
+					//	Delay message
+				}, 800);
+			
+				setTimeout(() => {
+					$('.health').html(`You won stage award: ${stgawrd} coin`);
+				}, 250);
+			}
 		}
 		else
 		{
