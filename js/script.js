@@ -35,7 +35,7 @@ $(window).on('load', function() {
 	}
 
 	function updateDamage(){
-		if (damage_power < 100) {
+		if (damage_power < 300) {
 			$('.damage-bar').css('width', damage_power)
 		}
 		else {
@@ -45,7 +45,7 @@ $(window).on('load', function() {
 	}
 
 	function powerUp(){
-		var price = 12 * damage_level;
+		var price = 6 * damage_level;
 		var needs = price - coin;
 
 		touchable = 0;
@@ -75,7 +75,7 @@ $(window).on('load', function() {
 			Oof.play();
 			
 			berkayHealth = berkayHealth - (damage * damage_level);
-			damage_power = damage_power + Math.floor(0 * 1);
+			damage_power = damage_power + 1;
 
 			dmgdeal = dmgdeal + (damage * damage_level)
 
