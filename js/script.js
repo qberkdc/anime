@@ -13,13 +13,19 @@ $(window).on('load', function() {
 	var damage = 3;
 	var damage_level = 1;
 	var stage = 1;
+	
+	var coin = 0;
+	var dmgdeal = 0;
+	var dmgmax = 250;
+	var dmgawrd = 3;
+	var stgawrd = 10;
 
 	$('#berkay').on('click', function(){
 		hitTheBerkayRandomly();
 	})
 
 	function updateHealth(){
-		$('.health').html(`Damage Lv: ${damage_level} | Stage: ${stage} | HP: ${berkayHealth}/${maxHealth}`);
+		$('.health').html(`Coins: ${coin} | Damage Lv: ${damage_level} | Stage: ${stage} | HP: ${berkayHealth}/${maxHealth}`);
 	}
 
 	function updateDamage(){
@@ -31,7 +37,27 @@ $(window).on('load', function() {
 			damage_level = damage_level + 1;
 		}
 	}
-	
+
+	function powerUp(){
+		var price = 12 * damage_level;
+		var needs = price - coin;
+		
+		if(price > coin){
+			$('.health').html(`It takes ${needs} coins to upgrade`);
+			setTimeout(() => {
+				updateHealth();
+			}, 750);
+		}
+		else {
+			damage_level = damage_level + 1;
+			coin = coin - price;
+			$('.health').html(`Upgrade successfull: ${damage_level} Lv`);
+			setTimeout(() => {
+				updateHealth();
+			}, 750);
+		}
+	}
+			
 	function hitTheBerkayRandomly(){
 		if(berkayHealth > 0)
 		{
@@ -39,7 +65,14 @@ $(window).on('load', function() {
 			Oof.play();
 			
 			berkayHealth = berkayHealth - (damage * damage_level);
-			damage_power = damage_power + Math.floor(1 * 3);
+			damage_power = damage_power + 1;
+
+			dmgdeal = dmgdeal + (damage * damage_level)
+
+			if(dmgdeal >= dmgmax) {
+				dmgdeal = 0;
+				coin = coin + dmgawrd;
+			}
 			
 			updateHealth();
 			updateDamage(); 
@@ -51,6 +84,7 @@ $(window).on('load', function() {
 				if(berkayHealth <= 0 && berkayDied == 1)
 				{
 					stage = stage + 1;
+					coin = coin + stgawrd;
 					printStage(stage);
 					var dansAudio = new Audio('sound/yamete_kudasai.mp3');
 					dansAudio.play();
