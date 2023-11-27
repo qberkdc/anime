@@ -22,7 +22,7 @@ $(window).on('load', function() {
 	}
 
 	function updateDamage(){
-		if (damage_power < 50) {
+		if (damage_power < 100) {
 			$('.damage-bar').css('width', damage_power)
 		}
 		else {
