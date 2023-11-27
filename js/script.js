@@ -129,7 +129,7 @@ $(window).on('load', function() {
 				$(berkay).attr('src', 'images/ninmy_normal.png');
 				updateHealth()
 				berkayDied = 0
-			}, 2500);
+			}, 6000);
 		}
 	}
 
