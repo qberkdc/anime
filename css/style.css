@@ -53,8 +53,8 @@ body {
 }
 
 .damage_bar {
-	width: 100px;
-	height: 9px;
+	width: 50px;
+	height: 4px;
 	background-color: #eee;
 }
 
@@ -65,8 +65,8 @@ body {
 }
 
 .damage-bar {
-	width: 100px;
-	height: 9px;
+	width: 50px;
+	height: 4px;
 	background-color: orange;
 }
 
