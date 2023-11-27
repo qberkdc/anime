@@ -43,7 +43,7 @@ $(window).on('load', function() {
 	}
 
 	function printDamage(damage){
-		$('.damage').html(`Damage -${damage}`);
+		$('.damage').html(`-${damage}`);
 		$('.damage').css('animation', 'damage_fade 50;ms');
 		$(berkay).attr('src', 'images/ninmy_hurt.png');
 		setTimeout(() => {
