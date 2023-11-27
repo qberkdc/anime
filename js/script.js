@@ -36,15 +36,15 @@ $(window).on('load', function() {
 	function printDamage(damage){
 		$('.damage').html(`Damage -${damage}`);
 		$('.damage').css('animation', 'damage_fade 50;ms');
-		$(berkay).attr('src', 'images/PC3.png');
+		$(berkay).attr('src', 'images/ninmy_hurt.png');
 		setTimeout(() => {
 			$('.damage').html('');
 			$('.damage').css('animation', 'none');
 			if(win === false)
 			{
-				$(berkay).attr('src', 'images/PC1.png');
+				$(berkay).attr('src', 'images/ninmy_normal.png');
 			}else {
-				$(berkay).attr('src', 'images/PC2.png');
+				$(berkay).attr('src', 'images/ninmy_dead.png');
 			}
 		}, 300);
 	}
@@ -53,7 +53,7 @@ $(window).on('load', function() {
 		$('#vid-1').css('display', 'block');
 		$('#vid-2').css('display', 'block');
 		$('.win').css('display','block');
-		$(berkay).attr('src', 'images/PC2.png');
+		$(berkay).attr('src', 'images/ninmy_dead.png');
 		berkayHealth = 300;
 		win = false;
 		var dansAudio = new Audio('sound/yamete_kudasai.mp3');
