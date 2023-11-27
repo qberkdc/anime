@@ -5,8 +5,8 @@ $(window).on('load', function() {
 	$('.win').css('display','none');
 
 	var berkayDied = 0
-	var berkayHealth = 300;
-	var maxHealth = 300;
+	var berkayHealth = 512;
+	var maxHealth = 512;
 	var win = false;
 	var berkay = $('#berkay');
 	var damage_power = 1;
@@ -75,7 +75,7 @@ $(window).on('load', function() {
 			Oof.play();
 			
 			berkayHealth = berkayHealth - (damage * damage_level);
-			if(dmgdeal > dmgmax - 30) damage_power = damage_power + 1;
+			damage_power = damage_power + Math.floor(0 * 1);
 
 			dmgdeal = dmgdeal + (damage * damage_level)
 
