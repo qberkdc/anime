@@ -48,13 +48,14 @@ $(window).on('load', function() {
 			$(berkay).attr('src', 'images/ninmy_hurt.png');
 
 			setTimeout(() => {
-				if(berkayHealth <= 0 && berkayDied == 0)
+				if(berkayHealth <= 0 && berkayDied == 1)
 				{
 					stage = stage + 1;
 					printStage(stage);
 					var dansAudio = new Audio('sound/yamete_kudasai.mp3');
 					dansAudio.play();
 					$(berkay).attr('src', 'images/ninmy_dead.png');
+					berkayDied = 0
 				}
 				else
 				{
