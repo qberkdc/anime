@@ -21,7 +21,7 @@ $(window).on('load', function() {
 	}
 
 	function updateDamage(){
-		if (damage_power < 100) {
+		if (damage_power < 50) {
 			$('.damage-bar').css('width', (damage_power * 3))
 		}
 		else {
@@ -36,18 +36,21 @@ $(window).on('load', function() {
 			var Oof = new Audio('sound/yahh.wav');
 			Oof.play();
 			
-			berkayHealth = berkayHealth - (damage * damage_power);
+			berkayHealth = berkayHealth - (damage * damage_level);
 			damage_power = damage_power + 1
 			
 			updateHealth();
 			updateDamage();
-			printDamage(damage * damage_level);
+			// printDamage(damage * damage_level);
 			
 			if(berkayHealth <= 0)
 			{
 				stage = stage + 1;
 				berkayHealth = (300 * stage);
 				printStage(stage)
+				var dansAudio = new Audio('sound/yamete_kudasai.mp3');
+				dansAudio.play();
+				$(berkay).attr('src', 'images/ninmy_dead.png');
 			}
 		}
 	}
@@ -69,7 +72,7 @@ $(window).on('load', function() {
 	}
 
 	function printStage(next){
-		$('.health').html('Next stage: ${next}');
+		$('.health').html('Next stage: '${next});
 	}
 
 	function Win(){
