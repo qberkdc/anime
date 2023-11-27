@@ -41,9 +41,7 @@ $(window).on('load', function() {
 			damage_power = damage_power + 1
 			
 			updateHealth();
-			updateDamage();
-			// printDamage(damage * damage_level);
-			
+			updateDamage();		
 			if(berkayHealth <= 0)
 			{
 				stage = stage + 1;
