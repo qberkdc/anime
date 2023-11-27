@@ -5,6 +5,7 @@ $(window).on('load', function() {
 	$('.win').css('display','none');
 
 	var berkayHealth = 300;
+	var maxHealth = 300;
 	var win = false;
 	var berkay = $('#berkay');
 	var damage_power = 1;
@@ -17,7 +18,7 @@ $(window).on('load', function() {
 	})
 
 	function updateHealth(){
-		$('.health').html(`Damage Lv: ${damage_level} | Stage: ${stage} | ${berkayHealth}/3000`);
+		$('.health').html(`Damage Lv: ${damage_level} | Stage: ${stage} | HP: ${berkayHealth}/${maxHealth}`);
 	}
 
 	function updateDamage(){
@@ -47,7 +48,8 @@ $(window).on('load', function() {
 			{
 				stage = stage + 1;
 				berkayHealth = (300 * stage);
-				printStage(stage)
+				maxHealth = berkayHealth;
+				printStage(stage);
 				var dansAudio = new Audio('sound/yamete_kudasai.mp3');
 				dansAudio.play();
 				$(berkay).attr('src', 'images/ninmy_dead.png');
