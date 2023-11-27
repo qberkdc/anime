@@ -26,8 +26,11 @@ $(window).on('load', function() {
 		hitTheBerkayRandomly();
 	})
 
-	$('#power_upgrade').on('click', function(){
-		if(touchable;== 1) powerUp();
+	$('#power_upgrade').on('click', function()
+	{
+		if(touchable == 1) {
+			powerUp();
+		}
 	})
 
 	function updateHealth(){
