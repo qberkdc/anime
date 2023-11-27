@@ -14,16 +14,23 @@ body {
 
 .damage {
 	position: absolute;
-	color: gray;
-	font-size: 1.0em;
-	top: 20%;
+	color: white;
+	font-size: 1.3em;
+	top: 30%;
+}
+
+.health {
+	position: absolute;
+	color: white;
+	font-size: 1.3em;
+	top: 30%;
 }
 
 .win {
-	color: blue;
+	color: green;
 	position: absolute;
-	font-size: 1.0em;
-	top: 10%;
+	font-size: 1.3em;
+	top: 30%;
 	display: none;
 }
 
