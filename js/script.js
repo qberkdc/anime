@@ -41,16 +41,23 @@ $(window).on('load', function() {
 			damage_power = damage_power + 1
 			
 			updateHealth();
-			updateDamage();		
+			updateDamage();
+
+			$(berkay).attr('src', 'images/ninmy_hurt.png');
+			
 			if(berkayHealth <= 0)
 			{
 				stage = stage + 1;
-				berkayHealth = (maxHealth * stage);
+				berkayHealth = (512 * stage);
 				maxHealth = berkayHealth;
 				printStage(stage);
 				var dansAudio = new Audio('sound/yamete_kudasai.mp3');
 				dansAudio.play();
 				$(berkay).attr('src', 'images/ninmy_dead.png');
+			}
+			else
+			{
+				$(berkay).attr('src', 'images/ninmy_normal.png');
 			}
 		}
 	}
