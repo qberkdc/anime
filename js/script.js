@@ -4,7 +4,7 @@ $(window).on('load', function() {
 	$('#vid-2').css('display', 'none');
 	$('.win').css('display','none');
 
-	var berkayHealth = 300;
+	var berkayHealth = 3000;
 	var win = false;
 	var berkay = $('#berkay');
 	var damage_power = 2;
