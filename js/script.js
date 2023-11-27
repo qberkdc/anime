@@ -23,7 +23,7 @@ $(window).on('load', function() {
 
 	function updateDamage(){
 		if (damage_power < 50) {
-			$('.damage-bar').css('width', (damage_power * 3))
+			$('.damage-bar').css('width', damage_power)
 		}
 		else {
 			damage_power = 1;
