@@ -32,7 +32,7 @@ $(window).on('load', function() {
 	}
 	
 	function hitTheBerkayRandomly(){
-		if(win === false)
+		if(berkayHealth > 0)
 		{
 			var Oof = new Audio('sound/yahh.wav');
 			Oof.play();
@@ -49,8 +49,6 @@ $(window).on('load', function() {
 				if(berkayHealth <= 0)
 				{
 					stage = stage + 1;
-					berkayHealth = (512 * stage);
-					maxHealth = berkayHealth;
 					printStage(stage);
 					var dansAudio = new Audio('sound/yamete_kudasai.mp3');
 					dansAudio.play();
@@ -58,9 +56,18 @@ $(window).on('load', function() {
 				}
 				else
 				{
-				$(berkay).attr('src', 'images/ninmy_normal.png');
+					$(berkay).attr('src', 'images/ninmy_normal.png');
 				}
 			}, 500);
+		}
+		else
+		{
+			setTimeout(() => {
+				berkayHealth = (512 * stage);
+				maxHealth = berkayHealth;
+				$(berkay).attr('src', 'images/ninmy_normal.png');
+				updateHealth()
+			}, 1500);
 		}
 	}
 
