@@ -51,6 +51,12 @@ body {
 	background-color: red;
 }
 
+.damage-bar {
+	width: 300px;
+	height: 13px;
+	background-color: orange;
+}
+
 #berkay {
 	user-select: none;
 }
