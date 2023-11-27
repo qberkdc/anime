@@ -24,6 +24,10 @@ $(window).on('load', function() {
 		hitTheBerkayRandomly();
 	})
 
+	$('power_upgrade').on('click', function(){
+		powerUp()
+	})
+
 	function updateHealth(){
 		$('.health').html(`Coins: ${coin} | Damage Lv: ${damage_level} | Stage: ${stage} | HP: ${berkayHealth}/${maxHealth}`);
 	}
