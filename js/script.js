@@ -4,6 +4,7 @@ $(window).on('load', function() {
 	$('#vid-2').css('display', 'none');
 	$('.win').css('display','none');
 
+	var berkayDied = 0
 	var berkayHealth = 300;
 	var maxHealth = 300;
 	var win = false;
@@ -41,12 +42,13 @@ $(window).on('load', function() {
 			damage_power = damage_power + Math.floor(1 * 3);
 			
 			updateHealth();
-			updateDamage();
+			updateDamage(); 
+			if(berkayHealth <= 0) { berkayDied = 1; }
 
 			$(berkay).attr('src', 'images/ninmy_hurt.png');
 
 			setTimeout(() => {
-				if(berkayHealth <= 0)
+				if(berkayHealth <= 0 && berkayDied == 0)
 				{
 					stage = stage + 1;
 					printStage(stage);
@@ -58,7 +60,7 @@ $(window).on('load', function() {
 				{
 					$(berkay).attr('src', 'images/ninmy_normal.png');
 				}
-			}, 500);
+			}, 100);
 		}
 		else
 		{
@@ -67,6 +69,7 @@ $(window).on('load', function() {
 				maxHealth = berkayHealth;
 				$(berkay).attr('src', 'images/ninmy_normal.png');
 				updateHealth()
+				berkayDied = 0
 			}, 1500);
 		}
 	}
