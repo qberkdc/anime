@@ -72,7 +72,7 @@ $(window).on('load', function() {
 	}
 
 	function printStage(next){
-		$('.health').html('Next stage: '${next});
+		$('.health').html(`Next stage: ${next}`);
 	}
 
 	function Win(){
