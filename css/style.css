@@ -45,6 +45,12 @@ body {
 	background-color: #eee;
 }
 
+.damage_bar {
+	width: 300px;
+	height: 13px;
+	background-color: #eee;
+}
+
 .current-health {
 	width: 300px;
 	height: 13px;
