@@ -27,7 +27,7 @@ $(window).on('load', function() {
 	})
 
 	$('#power_upgrade').on('click', function(){
-		powerUp();
+		if(touchable;== 1) powerUp();
 	})
 
 	function updateHealth(){
@@ -55,7 +55,7 @@ $(window).on('load', function() {
 			setTimeout(() => {
 				updateHealth();
 				touchable = 1;
-			}, 1200);
+			}, 1500);
 		}
 		else {
 			damage_level = damage_level + 1;
@@ -64,7 +64,7 @@ $(window).on('load', function() {
 			setTimeout(() => {
 				updateHealth();
 				touchable = 1;
-			}, 1200);
+			}, 1500);
 		}
 	}
 			
@@ -106,6 +106,14 @@ $(window).on('load', function() {
 					$(berkay).attr('src', 'images/ninmy_normal.png');
 				}
 			}, 100);
+
+			setTimeout(() => {
+				//	Delay message
+			}, 800);
+			
+			setTimeout(() => {
+				$('.health').html(`You won stage award: ${stgawrd} coin`);
+			}, 250);
 		}
 		else
 		{
@@ -115,7 +123,7 @@ $(window).on('load', function() {
 				$(berkay).attr('src', 'images/ninmy_normal.png');
 				updateHealth()
 				berkayDied = 0
-			}, 1500);
+			}, 2500);
 		}
 	}
 
