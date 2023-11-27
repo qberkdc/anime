@@ -26,7 +26,7 @@ $(window).on('load', function() {
 			$('.damage-bar').css('width', damage_power)
 		}
 		else {
-			damage_power = 1;
+			damage_power = 0;
 			damage_level = damage_level + 1;
 		}
 	}
@@ -38,7 +38,7 @@ $(window).on('load', function() {
 			Oof.play();
 			
 			berkayHealth = berkayHealth - (damage * damage_level);
-			damage_power = damage_power + 1
+			damage_power = damage_power + Math.floor(1 * 3);
 			
 			updateHealth();
 			updateDamage();
