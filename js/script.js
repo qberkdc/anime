@@ -36,11 +36,12 @@ $(window).on('load', function() {
 
 	function updateHealth(){
 		$('.health').html(`Coins: ${coin} | Damage Lv: ${damage_level} | Stage: ${stage} | HP: ${berkayHealth}/${maxHealth}`);
+		$('.current-health').css('width', 100 / maxHealth * berkayHealth);
 	}
 
 	function updateDamage(){
 		if (damage_power < 300) {
-			$('.damage-bar').css('width', damage_power)
+			$('.damage-bar').css('width', damage_power);
 		}
 		else {
 			damage_power = 0;
