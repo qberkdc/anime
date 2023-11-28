@@ -26,6 +26,20 @@ body {
 	top: 25%;
 }
 
+.ninmy {
+	width:255px;
+	height:255px;
+	border:0px;
+	background: url(images/ninmy_normal.png);
+}
+
+.blood {
+	width:255px;
+	height:255px;
+	border:0px;
+	background: url(images/null.png);
+}
+
 .win {
 	color: green;
 	position: absolute;
