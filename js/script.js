@@ -100,20 +100,20 @@ $(window).on('load', function() {
 			setTimeout(() => {
 				if(berkayHealth <= 0)
 				{
-					$('.ninmy').css('background-image', "images/ninmy_dead.png");
+					$('.ninmy').css('background-image', "/images/ninmy_dead.png");
 				}
 				else if(berkayHealth > 0)
 				{
-					$('.ninmy').css('background-image', "images/ninmy_hurt.png");
-					$('.blood').css('background-image', "images/blood.gif");
+					$('.ninmy').css('background-image', "/images/ninmy_hurt.png");
+					$('.blood').css('background-image', "/images/blood.gif");
 				}
 			}, 250);
 
 			setTimeout(() => {
 				if(berkayHealth > 0)
 				{
-					$('.ninmy').css('background-image', "images/ninmy_normal.png");
-					$('.blood').css('background-image', "images/null.png");
+					$('.ninmy').css('background-image', "/images/ninmy_normal.png");
+					$('.blood').css('background-image', "/images/null.png");
 				}
 			}, 400);
 
@@ -142,7 +142,7 @@ $(window).on('load', function() {
 			setTimeout(() => {
 				berkayHealth = (512 * stage);
 				maxHealth = berkayHealth;
-				$('.ninmy').css('background-image', "images/ninmy_normal.png");
+				$('.ninmy').css('background-image', "/images/ninmy_normal.png");
 				updateHealth()
 				berkayDied = 0;
 				touchable = 1;
