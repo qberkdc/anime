@@ -115,7 +115,7 @@ $(window).on('load', function() {
 					$(berkay).attr('src', 'images/ninmy_normal.png');
 					$(blood).attr('src', 'images/null.png');
 				}
-			}, 250);
+			}, 400);
 			
 			$(berkay).attr('src', 'images/ninmy_hurt.png');
 
