@@ -4,10 +4,35 @@ $(window).on('load', function()
 	$('#vid-2').css('display', 'none');
 	$('.win').css('display','none');
 
+	// Cookie Set
+	function setCookie(cname, cvalue, exdays) {
+	  const d = new Date();
+	  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	  let expires = "expires="+ d.toUTCString();
+	  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+
+	// Cookie Get
+	function getCookie(cname) {
+	  let name = cname + "=";
+	  let decodedCookie = decodeURIComponent(document.cookie);
+	  let ca = decodedCookie.split(';');
+	  for(let i = 0; i <ca.length; i++) {
+  	  let c = ca[i];
+	    while (c.charAt(0) == ' ') {
+	      c = c.substring(1);
+	    }
+	    if (c.indexOf(name) == 0) {
+	      return c.substring(name.length, c.length);
+	    }
+	  }
+	  return "";
+	}
+
 	// Variable Settings
-	var berkayDied = 0
-	var berkayHealth = 100;
-	var maxHealth = 100;
+	var died = 0
+	var hp = 100;
+	var maxhp = 100;
 	var win = false;
 	var berkay = $('#berkay');
 	var blood = $('#blood');
@@ -29,7 +54,16 @@ $(window).on('load', function()
 	var dmgmax = 250;
 	var dmgawrd = 3;
 	var stgawrd = 10;
-
+	
+	// Load Data
+	if(getCookie("data_hp") > 1) hp = getCookie("data_hp");
+	if(getCookie("data_maxhp") > 1) maxhp = getCookie("data_maxhp");
+	if(getCookie("data_damage_power") > 1) damage_power = getCookie("data_damage_power");
+	if(getCookie("data_damage_level") > 1) damage_level = getCookie("data_damage_level");
+	if(getCookie("data_stage") > 1) stage = getCookie("data_stage");
+	if(getCookie("data_coin") > 1) coin = getCookie("data_coin");
+	if(getCookie("data_dmgdeal") > 1) dmgdeal = getCookie("data_dmgdeal");
+	
 	$('#berkay').on('click', function()
 	{
 		// Call function
@@ -48,10 +82,10 @@ $(window).on('load', function()
 	function updateHealth()
 	{
 		// Update text info
-		$('.health').html(`Coins: ${coin} | Damage Lv: ${damage_level} | Stage: ${stage} | HP: ${berkayHealth}/${maxHealth}`);
+		$('.health').html(`Coins: ${coin} | Damage Lv: ${damage_level} | Stage: ${stage} | HP: ${hp}/${maxhp}`);
 		
 		// Update health bar
-		$('.current-health').css('width', (300 / maxHealth * berkayHealth));
+		$('.current-health').css('width', (300 / maxhp * hp));
 	}
 
 	function updateDamage()
@@ -108,13 +142,13 @@ $(window).on('load', function()
 			
 	function hitTheBerkayRandomly()
 	{
-		if(berkayHealth > 0 && touchable == 1)
+		if(hp > 0 && touchable == 1)
 		{
 			// Play pain sound
 			var Oof = new Audio('sound/yahh.wav'); Oof.play();
 			
 			// Drop the health
-			berkayHealth = berkayHealth - (damage * damage_level);
+			hp = hp - (damage * damage_level);
 			
 			// Damage power & Award
 			damage_power = damage_power + 1;
@@ -128,18 +162,18 @@ $(window).on('load', function()
 			
 			// Update character status
 			updateHealth(); updateDamage(); 
-			if(berkayHealth <= 0) { berkayDied = 1; }
+			if(hp <= 0) { died = 1; }
 
 			// Change character status
 			setTimeout(() => 
 			{
-				if(berkayHealth <= 0)
+				if(hp <= 0)
 				{
 					// Make character dead
 					$('.ninmy').css('background', `url(${ninmy_dead})`);
 					$('.blood').css('background', `url(${ninmy_blood})`);
 				}
-				else if(berkayHealth > 0)
+				else if(hp > 0)
 				{
 					// Make hurt effect
 					$('.ninmy').css('background', `url(${ninmy_hurt})`);
@@ -150,7 +184,7 @@ $(window).on('load', function()
 			// Character is alive
 			setTimeout(() => 
 			{
-				if(berkayHealth > 0)
+				if(hp > 0)
 				{
 					$('.ninmy').css('background', `url(${ninmy_normal})`);
 					$('.blood').css('background', `url(${ninmy_null})`);
@@ -160,7 +194,7 @@ $(window).on('load', function()
 			// Character is died
 			setTimeout(() => 
 			{
-				if(berkayHealth <= 0 && berkayDied == 1)
+				if(hp <= 0 && died == 1)
 				{
 					stage = stage + 1;
 					coin = coin + stgawrd;
@@ -171,7 +205,7 @@ $(window).on('load', function()
 			}, 10);
 			
 			// Award message
-			if(berkayHealth <= 0)
+			if(hp <= 0)
 			{
 				setTimeout(() => 
 				{
@@ -183,19 +217,19 @@ $(window).on('load', function()
 			}
 			
 			// Switch next stage
-			if(berkayHealth <= 0)
+			if(hp <= 0)
 			{
 				setTimeout(() => 
 				{
-					berkayHealth = (112 * stage); maxHealth = berkayHealth;
-					$('.ninmy').css('background', `url(${ninmy_normal})`);
-					$('.blood').css('background', `url(${ninmy_null})`);
-					updateHealth()
-					berkayDied = 0;
-					touchable = 1;
+					nextStage()
 				}, 6000);
-		}
-		
+			}
+			
+			// Save data
+			setTimeout(() =>
+			{
+				saveData();
+			}, 100);
 		}
 	}
 
@@ -203,5 +237,28 @@ $(window).on('load', function()
 	function printStage(next)
 	{
 		$('.health').html(`Next stage: ${next}`);
+	}
+	
+	// Stage next
+	function nextStage()
+	{
+		hp = (112 * stage); maxhp = hp;
+		$('.ninmy').css('background', `url(${ninmy_normal})`);
+		$('.blood').css('background', `url(${ninmy_null})`);
+		updateHealth()
+		died = 0;
+		touchable = 1;
+	}
+	
+	// Save Data
+	function saveData()
+	{
+		setCookie("data_hp", `${hp}`", 99999999);
+		setCookie("data_maxhp", `${maxhp}`", 99999999);
+		setCookie("data_damage_power", `${damage_power}`", 99999999);
+		setCookie("data_damage_level", `${damage_level}`", 99999999);
+		setCookie("data_stage", `${stage}`", 99999999);
+		setCookie("data_coin", `${coin}`", 99999999);
+		setCookie("data_dmgdeal", `${dmgdeal}`", 99999999);
 	}
 })
