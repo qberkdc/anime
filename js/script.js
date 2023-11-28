@@ -137,6 +137,7 @@ $(window).on('load', function()
 				{
 					// Make character dead
 					$('.ninmy').css('background', `url(${ninmy_dead})`);
+					$('.blood').css('background', `url(${ninmy_blood})`);
 				}
 				else if(berkayHealth > 0)
 				{
@@ -144,7 +145,7 @@ $(window).on('load', function()
 					$('.ninmy').css('background', `url(${ninmy_hurt})`);
 					$('.blood').css('background', `url(${ninmy_blood})`);
 				}
-			}, 250);
+			}, 350);
 
 			// Character is alive
 			setTimeout(() => 
