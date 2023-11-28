@@ -33,7 +33,7 @@ $(window).on('load', function()
 				return c.substring(name.length, c.length);
 			}
 		}
-		return '"';
+		return 1;
 	}
 
 	// Variable Settings
