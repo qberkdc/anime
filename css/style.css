@@ -63,8 +63,8 @@ body {
 }
 
 .health-bar {
-	width: 3000px;
-	height: 9px;
+	width: 300px;
+	height: 11px;
 	background-color: #eee;
 }
 
@@ -75,8 +75,8 @@ body {
 }
 
 .current-health {
-	width: 3000px;
-	height: 9px;
+	width: 300px;
+	height: 11px;
 	background-color: red;
 }
 
