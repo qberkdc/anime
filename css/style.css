@@ -39,8 +39,8 @@ body {
 	background: url("https://raw.githubusercontent.com/qberkdc/anime/master/images/null.png");
 	background-size: cover;
 	background-repeat: no-repeat;
-	width: 128px;
-	height: 128px;
+	width: 256px;
+	height: 256px;
 	z-index: 2;
 }
 
