@@ -126,7 +126,7 @@ $(window).on('load', function()
 		else
 		{
 			// Purchase success
-			damage_level = damage_level + 1; coin = coin - price;
+			damage_level += 1; coin -= price;
 			var playAudio = new Audio('sound/upgrade_success.mp3'); playAudio.play();
 			$('.health').html(`Upgrade successfull: ${damage_level} Lv`);
 			
@@ -267,11 +267,10 @@ $(window).on('load', function()
 		if(getCookie("data_stage") != '') stage = getCookie("data_stage");
 		if(getCookie("data_coin") != '') coin = getCookie("data_coin");
 		if(getCookie("data_dmgdeal") != '') dmgdeal = getCookie("data_dmgdeal");
+		
+		$('.health').html(`${coin} / ${damage_level} / ${stage} / ${hp}/${maxhp}`);
 	}
 	
 	// Load data
 	loadData();
-	
-	// Sync info
-	updateHealth();
 })
