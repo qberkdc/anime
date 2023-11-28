@@ -5,28 +5,35 @@ $(window).on('load', function()
 	$('.win').css('display','none');
 
 	// Cookie Set
-	function setCookie(cname, cvalue, exdays) {
-	  const d = new Date();
-	  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-	  let expires = "expires="+ d.toUTCString();
-	  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	function setCookie(cname, cvalue, exdays)
+	{
+		const d = new Date();
+		d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		let expires = "expires="+ d.toUTCString();
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 	}
 
 	// Cookie Get
-	function getCookie(cname) {
-	  let name = cname + "=";
-	  let decodedCookie = decodeURIComponent(document.cookie);
-	  let ca = decodedCookie.split(';');
-	  for(let i = 0; i <ca.length; i++) {
-  	  let c = ca[i];
-	    while (c.charAt(0) == ' ') {
-	      c = c.substring(1);
-	    }
-	    if (c.indexOf(name) == 0) {
-	      return c.substring(name.length, c.length);
-	    }
-	  }
-	  return "";
+	function getCookie(cname)
+	{
+	 	let name = cname + "=";
+	 	let decodedCookie = decodeURIComponent(document.cookie);
+	 	let ca = decodedCookie.split(';');
+	
+	 	for(let i = 0; i <ca.length; i++) 
+		{
+ 			let c = ca[i];
+	    	while (c.charAt(0) == ' ') 
+			{
+				c = c.substring(1);
+	    	}
+	
+			if (c.indexOf(name) == 0)
+			{
+	    		return c.substring(name.length, c.length);
+	  	  }
+		}
+		return 0;
 	}
 
 	// Variable Settings
@@ -67,7 +74,7 @@ $(window).on('load', function()
 	$('#berkay').on('click', function()
 	{
 		// Call function
-		hitTheBerkayRandomly();
+		hit();
 	})
 
 	$('#power_upgrade').on('click', function()
@@ -140,7 +147,7 @@ $(window).on('load', function()
 		}
 	}
 			
-	function hitTheBerkayRandomly()
+	function hit()
 	{
 		if(hp > 0 && touchable == 1)
 		{
@@ -209,10 +216,7 @@ $(window).on('load', function()
 			{
 				setTimeout(() => 
 				{
-					setTimeout(() => 
-					{
-						$('.health').html(`You won stage award: ${stgawrd} coin`);
-					}, 1500);
+					$('.health').html(`You won stage award: ${stgawrd} coin`);
 				}, 1500);
 			}
 			
@@ -221,7 +225,7 @@ $(window).on('load', function()
 			{
 				setTimeout(() => 
 				{
-					nextStage()
+					nextStage();
 				}, 6000);
 			}
 			
