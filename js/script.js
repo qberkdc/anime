@@ -1,4 +1,4 @@
-$(window).on('load', function() {
+8$(window).on('load', function() {
 
 	$('#vid-1').css('display', 'none');
 	$('#vid-2').css('display', 'none');
@@ -122,7 +122,7 @@ $(window).on('load', function() {
 					$('.ninmy').css('background', `url(${ninmy_normal})`);
 					$('.blood').css('background', `url(${ninmy_null})`);
 				}
-			}, 400);
+			}, 1000);
 
 			setTimeout(() => {
 				if(berkayHealth <= 0 && berkayDied == 1)
