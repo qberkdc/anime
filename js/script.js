@@ -32,11 +32,8 @@ $(window).on('load', function()
 			{
 				return c.substring(name.length, c.length);
 			}
-			else
-			{
-				return "Undefined";
-			}
 		}
+		return '"';
 	}
 
 	// Variable Settings
@@ -233,7 +230,13 @@ $(window).on('load', function()
 			setTimeout(() =>
 			{
 				saveData();
-			}, 100);
+			}, 50);
+			
+			// Load data
+			setTimeout(() =>
+			{
+				loadData();
+			}, 50);
 		}
 	}
 
@@ -269,12 +272,12 @@ $(window).on('load', function()
 	// Load Data
 	function loadData()
 	{
-		if(getCookie("data_hp") != 'Undefined') hp = getCookie("data_hp");
-		if(getCookie("data_maxhp") != 'Undefined') maxhp = getCookie("data_maxhp");
-		if(getCookie("data_damage_power") != 'Undefined') damage_power = getCookie("data_damage_power");
-		if(getCookie("data_damage_level") != 'Undefined') damage_level = getCookie("data_damage_level");
-		if(getCookie("data_stage") != 'Undefined') stage = getCookie("data_stage");
-		if(getCookie("data_coin") != 'Undefined') coin = getCookie("data_coin");
-		if(getCookie("data_dmgdeal") != 'Undefined') dmgdeal = getCookie("data_dmgdeal");
+		hp = getCookie("data_hp");
+		maxhp = getCookie("data_maxhp");
+		damage_power = getCookie("data_damage_power");
+		damage_level = getCookie("data_damage_level");
+		stage = getCookie("data_stage");
+		coin = getCookie("data_coin");
+		dmgdeal = getCookie("data_dmgdeal");
 	}
 })
