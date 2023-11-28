@@ -30,16 +30,16 @@ body {
 	background: url("https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_normal.png");
 	background-size: cover;
 	background-repeat: no-repeat;
-	width: 20%;
-	height: 20%;
+	width: 300px;
+	height: 300px;
 }
 
 .blood {
 	background: url("https://raw.githubusercontent.com/qberkdc/anime/master/images/null.png");
 	background-size: cover;
 	background-repeat: no-repeat;
-	width: 20%;
-	height: 20%;
+	width: 300px;
+	height: 300px;
 }
 
 .win {
