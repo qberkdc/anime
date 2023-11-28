@@ -36,7 +36,7 @@ $(window).on('load', function() {
 
 	function updateHealth(){
 		$('.health').html(`Coins: ${coin} | Damage Lv: ${damage_level} | Stage: ${stage} | HP: ${berkayHealth}/${maxHealth}`);
-		$('.current-health').css('width', 100 / maxHealth * berkayHealth);
+		$('.current-health').css('width', 300 - (100 / maxHealth * berkayHealth));
 	}
 
 	function updateDamage(){
