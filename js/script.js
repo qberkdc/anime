@@ -33,7 +33,7 @@ $(window).on('load', function()
 				return c.substring(name.length, c.length);
 			}
 		}
-		return 1;
+		return "";
 	}
 
 	// Variable Settings
@@ -231,12 +231,6 @@ $(window).on('load', function()
 			{
 				saveData();
 			}, 50);
-			
-			// Load data
-			setTimeout(() =>
-			{
-				loadData();
-			}, 50);
 		}
 	}
 
@@ -260,13 +254,13 @@ $(window).on('load', function()
 	// Save Data
 	function saveData()
 	{
-		setCookie("data_hp", `${hp}`, 99999999);
-		setCookie("data_maxhp", `${maxhp}`, 99999999);
-		setCookie("data_damage_power", `${damage_power}`, 99999999);
-		setCookie("data_damage_level", `${damage_level}`, 99999999);
-		setCookie("data_stage", `${stage}`, 99999999);
-		setCookie("data_coin", `${coin}`, 99999999);
-		setCookie("data_dmgdeal", `${dmgdeal}`, 99999999);
+		setCookie("data_hp", hp, 9999);
+		setCookie("data_maxhp", maxhp, 9999);
+		setCookie("data_damage_power", damage_power, 9999);
+		setCookie("data_damage_level", damage_level, 9999);
+		setCookie("data_stage", stage, 9999);
+		setCookie("data_coin", coin, 9999);
+		setCookie("data_dmgdeal", dmgdeal, 9999);
 	}
 	
 	// Load Data
