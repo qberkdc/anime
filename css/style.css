@@ -27,13 +27,13 @@ body {
 }
 
 .ninmy {
-	background-image: url("images/ninmy_normal.png");
+	background: url("https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_normal.png"");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
 .blood {
-	background-image: url("images/null.png");
+	background: url("https://raw.githubusercontent.com/qberkdc/anime/master/images/null.png"");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
