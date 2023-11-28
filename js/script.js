@@ -266,12 +266,12 @@ $(window).on('load', function()
 	// Load Data
 	function loadData()
 	{
-		hp = getCookie("data_hp");
-		maxhp = getCookie("data_maxhp");
-		damage_power = getCookie("data_damage_power");
-		damage_level = getCookie("data_damage_level");
-		stage = getCookie("data_stage");
-		coin = getCookie("data_coin");
-		dmgdeal = getCookie("data_dmgdeal");
+		if(getCookie("data_hp") != '') hp = getCookie("data_hp");
+		if(getCookie("data_maxhp") != '') maxhp = getCookie("data_maxhp");
+		if(getCookie("data_damage_power") != '') damage_power = getCookie("data_damage_power");
+		if(getCookie("data_damage_level") != '') damage_level = getCookie("data_damage_level");
+		if(getCookie("data_stage") != '') stage = getCookie("data_stage");
+		if(getCookie("data_coin") != '') coin = getCookie("data_coin");
+		if(getCookie("data_dmgdeal") != '') dmgdeal = getCookie("data_dmgdeal");
 	}
 })
