@@ -16,25 +16,27 @@ $(window).on('load', function()
 	// Cookie Get
 	function getCookie(cname)
 	{
-	 	let name = cname + "=";
-	 	let decodedCookie = decodeURIComponent(document.cookie);
-	 	let ca = decodedCookie.split(';');
+		let name = cname + "=";
+		let decodedCookie = decodeURIComponent(document.cookie);
+		let ca = decodedCookie.split(';');
 	
-	 	for(let i = 0; i <ca.length; i++) 
+		for(let i = 0; i <ca.length; i++) 
 		{
- 			let c = ca[i];
-	    		while (c.charAt(0) == ' ') 
+			let c = ca[i];
+			while (c.charAt(0) == ' ') 
 			{
 				c = c.substring(1);
-	    		}
+			}
 	
 			if (c.indexOf(name) == 0)
 			{
-	    			return c.substring(name.length, c.length);
-	  	  	}
+				return c.substring(name.length, c.length);
+			}
+			else
+			{
+				return "Undefined";
+			}
 		}
-		
-		return 0;
 	}
 
 	// Variable Settings
@@ -63,14 +65,8 @@ $(window).on('load', function()
 	var dmgawrd = 3;
 	var stgawrd = 10;
 	
-	// Load Data
-	if(getCookie("data_hp") > 1) hp = getCookie("data_hp");
-	if(getCookie("data_maxhp") > 1) maxhp = getCookie("data_maxhp");
-	if(getCookie("data_damage_power") > 1) damage_power = getCookie("data_damage_power");
-	if(getCookie("data_damage_level") > 1) damage_level = getCookie("data_damage_level");
-	if(getCookie("data_stage") > 1) stage = getCookie("data_stage");
-	if(getCookie("data_coin") > 1) coin = getCookie("data_coin");
-	if(getCookie("data_dmgdeal") > 1) dmgdeal = getCookie("data_dmgdeal");
+	// Load data
+	loadData();
 	
 	// Sync info
 	updateHealth();
@@ -268,5 +264,17 @@ $(window).on('load', function()
 		setCookie("data_stage", `${stage}`, 99999999);
 		setCookie("data_coin", `${coin}`, 99999999);
 		setCookie("data_dmgdeal", `${dmgdeal}`, 99999999);
+	}
+	
+	// Load Data
+	function loadData()
+	{
+		if(getCookie("data_hp") != 'Undefined') hp = getCookie("data_hp");
+		if(getCookie("data_maxhp") != 'Undefined') maxhp = getCookie("data_maxhp");
+		if(getCookie("data_damage_power") != 'Undefined') damage_power = getCookie("data_damage_power");
+		if(getCookie("data_damage_level") != 'Undefined') damage_level = getCookie("data_damage_level");
+		if(getCookie("data_stage") != 'Undefined') stage = getCookie("data_stage");
+		if(getCookie("data_coin") != 'Undefined') coin = getCookie("data_coin");
+		if(getCookie("data_dmgdeal") != 'Undefined') dmgdeal = getCookie("data_dmgdeal");
 	}
 })
