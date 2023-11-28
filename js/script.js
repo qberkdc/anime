@@ -6,8 +6,8 @@ $(window).on('load', function()
 
 	// Variable Settings
 	var berkayDied = 0
-	var berkayHealth = 512;
-	var maxHealth = 512;
+	var berkayHealth = 100;
+	var maxHealth = 100;
 	var win = false;
 	var berkay = $('#berkay');
 	var blood = $('#blood');
@@ -187,8 +187,9 @@ $(window).on('load', function()
 			{
 				setTimeout(() => 
 				{
-					berkayHealth = (512 * stage); maxHealth = berkayHealth;
+					berkayHealth = (112 * stage); maxHealth = berkayHealth;
 					$('.ninmy').css('background', `url(${ninmy_normal})`);
+					$('.blood').css('background', `url(${ninmy_null})`);
 					updateHealth()
 					berkayDied = 0;
 					touchable = 1;
