@@ -96,6 +96,22 @@ $(window).on('load', function() {
 			updateDamage(); 
 			if(berkayHealth <= 0) { berkayDied = 1; }
 
+			setTimeout(() => {
+				if(berkayHealth <= 0)
+				{
+					$(berkay).attr('src', 'images/ninmy_dead.png');
+				}
+				else if(berkayHealth > 0)
+				{
+					$(berkay).attr('src', 'images/ninmy_hurt.png');
+				}
+			}, 250);
+
+			setTimeout(() => {
+				if(berkayHealth > 0)
+					$(berkay).attr('src', 'images/ninmy_normal.png');
+			}, 500);
+			
 			$(berkay).attr('src', 'images/ninmy_hurt.png');
 
 			setTimeout(() => {
@@ -105,14 +121,9 @@ $(window).on('load', function() {
 					coin = coin + stgawrd;
 					printStage(stage);
 					var playAudio = new Audio('sound/yamete_kudasai.mp3'); playAudio.play();
-					$(berkay).attr('src', 'images/ninmy_dead.png');
 					touchable = 0;
 				}
-				else
-				{
-					$(berkay).attr('src', 'images/ninmy_normal.png');
-				}
-			}, 55);
+			}, 10);
 			
 			if(berkayHealth <= 0)
 			{
