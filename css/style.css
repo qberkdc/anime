@@ -31,6 +31,7 @@ body {
 	height:255px;
 	border:0px;
 	background-image: "/images/ninmy_normal.png";
+	background-size: 100%;
 }
 
 .blood {
@@ -38,6 +39,7 @@ body {
 	height:255px;
 	border:0px;
 	background-image: "/images/null.png";
+	background-size: 100%;
 }
 
 .win {
