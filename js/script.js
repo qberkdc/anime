@@ -104,7 +104,7 @@ $(window).on('load', function() {
 					stage = stage + 1;
 					coin = coin + stgawrd;
 					printStage(stage);
-					var playAudio = new Audio('sound/file.mp3'); playAudio.play();
+					var playAudio = new Audio('sound/yamete_kudasai.mp3'); playAudio.play();
 					$(berkay).attr('src', 'images/ninmy_dead.png');
 					touchable = 0;
 				}
@@ -112,7 +112,7 @@ $(window).on('load', function() {
 				{
 					$(berkay).attr('src', 'images/ninmy_normal.png');
 				}
-			}, 25);
+			}, 55);
 			
 			if(berkayHealth <= 0)
 			{
