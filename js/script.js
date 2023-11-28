@@ -100,20 +100,20 @@ $(window).on('load', function() {
 			setTimeout(() => {
 				if(berkayHealth <= 0)
 				{
-					$(berkay).attr('src', 'images/ninmy_dead.png');
+					$('.ninmy').css('background', url(images/ninmy_dead.png));
 				}
 				else if(berkayHealth > 0)
 				{
-					$(berkay).attr('src', 'images/ninmy_hurt.png');
-					$(blood).attr('src', 'images/blood.gif');
+					$('.ninmy').css('background', url(images/ninmy_hurt.png));
+					$('.blood').css('background', url(images/blood.gif));
 				}
 			}, 250);
 
 			setTimeout(() => {
 				if(berkayHealth > 0)
 				{
-					$(berkay).attr('src', 'images/ninmy_normal.png');
-					$(blood).attr('src', 'images/null.png');
+					$('.ninmy').css('background', url(images/ninmy_normal.png));
+					$('.blood').css('background', url(images/null.png));
 				}
 			}, 400);
 			
@@ -144,28 +144,12 @@ $(window).on('load', function() {
 			setTimeout(() => {
 				berkayHealth = (512 * stage);
 				maxHealth = berkayHealth;
-				$(berkay).attr('src', 'images/ninmy_normal.png');
+				$('.ninmy').css('background', url(images/ninmy_normal.png));
 				updateHealth()
 				berkayDied = 0;
 				touchable = 1;
 			}, 6000);
 		}
-	}
-
-	function printDamage(damage){
-		$('.damage').html(`${damage}`);
-		$('.damage').css('animation', 'damage_fade 50;ms');
-		$(berkay).attr('src', 'images/ninmy_hurt.png');
-		setTimeout(() => {
-			$('.damage').html('');
-			$('.damage').css('animation', 'none');
-			if(win === false)
-			{
-				$(berkay).attr('src', 'images/ninmy_normal.png');
-			}else {
-				$(berkay).attr('src', 'images/ninmy_dead.png');
-			}
-		}, 300);
 	}
 
 	function printStage(next){
