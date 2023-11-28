@@ -261,12 +261,12 @@ $(window).on('load', function()
 	// Save Data
 	function saveData()
 	{
-		setCookie("data_hp", `${hp}`", 99999999);
-		setCookie("data_maxhp", `${maxhp}`", 99999999);
-		setCookie("data_damage_power", `${damage_power}`", 99999999);
-		setCookie("data_damage_level", `${damage_level}`", 99999999);
-		setCookie("data_stage", `${stage}`", 99999999);
-		setCookie("data_coin", `${coin}`", 99999999);
-		setCookie("data_dmgdeal", `${dmgdeal}`", 99999999);
+		setCookie("data_hp", `${hp}`, 99999999);
+		setCookie("data_maxhp", `${maxhp}`, 99999999);
+		setCookie("data_damage_power", `${damage_power}`, 99999999);
+		setCookie("data_damage_level", `${damage_level}`, 99999999);
+		setCookie("data_stage", `${stage}`, 99999999);
+		setCookie("data_coin", `${coin}`, 99999999);
+		setCookie("data_dmgdeal", `${dmgdeal}`, 99999999);
 	}
 })
