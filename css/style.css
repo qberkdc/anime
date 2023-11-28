@@ -30,14 +30,14 @@ body {
 	width:255px;
 	height:255px;
 	border:0px;
-	background: url(images/ninmy_normal.png);
+	background-image: "images/ninmy_normal.png";
 }
 
 .blood {
 	width:255px;
 	height:255px;
 	border:0px;
-	background: url(images/null.png);
+	background-image: "images/null.png";
 }
 
 .win {
