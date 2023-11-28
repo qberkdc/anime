@@ -153,16 +153,4 @@ $(window).on('load', function() {
 	function printStage(next){
 		$('.health').html(`Next stage: ${next}`);
 	}
-
-	function Win(){
-		$('#vid-1').css('display', 'block');
-		$('#vid-2').css('display', 'block');
-		$('.win').css('display','block');
-		$(berkay).attr('src', 'images/ninmy_dead.png');
-		berkayHealth = 300;
-		win = false;
-		var dansAudio = new Audio('sound/yamete_kudasai.mp3');
-		dansAudio.play()
-	}
-
 })
