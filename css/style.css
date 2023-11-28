@@ -30,18 +30,12 @@ body {
 	background-image: url("images/ninmy_normal.png");
 	background-size: cover;
 	background-repeat: no-repeat;
-	width:255px;
-	height:255px;
-	position: absolute;
 }
 
 .blood {
 	background-image: url("images/null.png");
 	background-size: cover;
 	background-repeat: no-repeat;
-	width:255px;
-	height:255px;
-	position: absolute;
 }
 
 .win {
