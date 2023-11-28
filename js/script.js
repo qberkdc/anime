@@ -71,6 +71,9 @@ $(window).on('load', function()
 	if(getCookie("data_coin") > 1) coin = getCookie("data_coin");
 	if(getCookie("data_dmgdeal") > 1) dmgdeal = getCookie("data_dmgdeal");
 	
+	// Sync info
+	updateHealth();
+	
 	$('#berkay').on('click', function()
 	{
 		// Call function
