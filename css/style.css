@@ -23,7 +23,7 @@ body {
 	position: absolute;
 	color: white;
 	font-size: 0.8em;
-	top: 25%;
+	top: 22%;
 }
 
 .ninmy {
@@ -66,24 +66,28 @@ body {
 	width: 300px;
 	height: 11px;
 	background-color: #eee;
+	top: 28%;
 }
 
 .damage_bar {
 	width: 300px;
 	height: 8px;
 	background-color: #eee;
+	top: 25%;
 }
 
 .current-health {
 	width: 300px;
 	height: 11px;
 	background-color: red;
+	top: 28%;
 }
 
 .damage-bar {
 	width: 300px;
 	height: 8px;
 	background-color: orange;
+	top: 25%;
 }
 
 #berkay {
