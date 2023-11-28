@@ -11,7 +11,7 @@ $(window).on('load', function() {
 	var berkay = $('#berkay');
 	var blood = $('#blood');
 	var damage_power = 1;
-	var damage = 3;
+	var damage = 5;
 	var damage_level = 1;
 	var stage = 1;
 
