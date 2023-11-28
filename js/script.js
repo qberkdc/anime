@@ -9,6 +9,7 @@ $(window).on('load', function() {
 	var maxHealth = 512;
 	var win = false;
 	var berkay = $('#berkay');
+	var blood = $('#blood');
 	var damage_power = 1;
 	var damage = 3;
 	var damage_level = 1;
@@ -104,13 +105,17 @@ $(window).on('load', function() {
 				else if(berkayHealth > 0)
 				{
 					$(berkay).attr('src', 'images/ninmy_hurt.png');
+					$(blood).attr('src', 'images/blood.gif');
 				}
 			}, 250);
 
 			setTimeout(() => {
 				if(berkayHealth > 0)
+				{
 					$(berkay).attr('src', 'images/ninmy_normal.png');
-			}, 500);
+					$(blood).attr('src', 'images/null.png');
+				}
+			}, 250);
 			
 			$(berkay).attr('src', 'images/ninmy_hurt.png');
 
