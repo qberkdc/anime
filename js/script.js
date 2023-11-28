@@ -62,12 +62,6 @@ $(window).on('load', function()
 	var dmgawrd = 3;
 	var stgawrd = 10;
 	
-	// Load data
-	loadData();
-	
-	// Sync info
-	updateHealth();
-	
 	$('#berkay').on('click', function()
 	{
 		// Call function
@@ -274,4 +268,10 @@ $(window).on('load', function()
 		if(getCookie("data_coin") != '') coin = getCookie("data_coin");
 		if(getCookie("data_dmgdeal") != '') dmgdeal = getCookie("data_dmgdeal");
 	}
+	
+	// Load data
+	loadData();
+	
+	// Sync info
+	updateHealth();
 })
