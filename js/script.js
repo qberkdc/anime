@@ -16,6 +16,12 @@ $(window).on('load', function() {
 	var stage = 1;
 
 	var touchable = 1;
+
+	let ninmy_hurt = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_hurt.png"
+	let ninmy_dead = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_dead.png"
+	let ninmy_normal = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_normal.png"
+	let ninmy_blood = "https://raw.githubusercontent.com/qberkdc/anime/master/images/blood.gif"
+	let ninmy_null = "https://raw.githubusercontent.com/qberkdc/anime/master/images/null.png"
 	
 	var coin = 0;
 	var dmgdeal = 0;
@@ -101,20 +107,20 @@ $(window).on('load', function() {
 			setTimeout(() => {
 				if(berkayHealth <= 0)
 				{
-					$('.ninmy').css('background-image', "/images/ninmy_dead.png");
+					$('.ninmy').css('background', `url(${ninmy_dead}`);
 				}
 				else if(berkayHealth > 0)
 				{
-					$('.ninmy').css('background-image', "/images/ninmy_hurt.png");
-					$('.blood').css('background-image', "/images/blood.gif");
+					$('.ninmy').css('background', `url(${ninmy_hurt}`);
+					$('.blood').css('background', `url(${ninmy_blood}`);
 				}
 			}, 250);
 
 			setTimeout(() => {
 				if(berkayHealth > 0)
 				{
-					$('.ninmy').css('background-image', "/images/ninmy_normal.png");
-					$('.blood').css('background-image', "/images/null.png");
+					$('.ninmy').css('background', `url(${ninmy_normal}`);
+					$('.blood').css('background', `url(${ninmy_null}`);
 				}
 			}, 400);
 
@@ -138,12 +144,12 @@ $(window).on('load', function() {
 				}, 1500);
 			}
 		}
-		else if(berkayHealth <= 0)
+		if(berkayHealth <= 0)
 		{
 			setTimeout(() => {
 				berkayHealth = (512 * stage);
 				maxHealth = berkayHealth;
-				$('.ninmy').css('background-image', "/images/ninmy_normal.png");
+				$('.ninmy').css('background', `url(${ninmy_normal}`);
 				updateHealth()
 				berkayDied = 0;
 				touchable = 1;
