@@ -256,15 +256,24 @@ $(window).on('load', function()
 	// Load Data
 	function loadData()
 	{
-		if(getCookie("data_hp") != "") hp = getCookie("data_hp");
-		if(getCookie("data_maxhp") != "") maxhp = getCookie("data_maxhp");
-		if(getCookie("data_damage_power") != "") damage_power = getCookie("data_damage_power");
-		if(getCookie("data_damage_level") != "") damage_level = getCookie("data_damage_level");
-		if(getCookie("data_stage") != "") stage = getCookie("data_stage");
-		if(getCookie("data_coin") != "") coin = getCookie("data_coin");
-		if(getCookie("data_dmgdeal") != "") dmgdeal = getCookie("data_dmgdeal");
+		if(_getCookie("data_hp") != "") hp = _getCookie("data_hp");
+		if(_getCookie("data_maxhp") != "") maxhp = _getCookie("data_maxhp");
+		if(_getCookie("data_damage_power") != "") damage_power = _getCookie("data_damage_power");
+		if(_getCookie("data_damage_level") != "") damage_level = _getCookie("data_damage_level");
+		if(_getCookie("data_stage") != "") stage = _getCookie("data_stage");
+		if(_getCookie("data_coin") != "") coin = _getCookie("data_coin");
+		if(_getCookie("data_dmgdeal") != "") dmgdeal = _getCookie("data_dmgdeal");
+	}
+
+	// Fix Broken health
+	function fixHealth()
+	{
+		if(hp <= 0)
+		{
+			hp = maxhp;
+		}
 	}
 	
 	// Load data
-	loadData(); updateHealth();
+	loadData(); fixHealth(); updateHealth();
 })
