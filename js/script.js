@@ -82,7 +82,7 @@ $(window).on('load', function()
 		if (damage_power < 500)
 		{
 			// Update damage bar status
-			$('.damage-bar').css('width', (300 / 500 * damage_power);
+			$('.damage-bar').css('width', (300 / 500 * damage_power));
 		}
 		else
 		{
