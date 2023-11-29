@@ -22,8 +22,8 @@ $(window).on('load', function()
 	{
 		const nameString = name + "="
 		const value = document.cookie.split(";").filter(item => { return item.includes(name) })
-		
-		if (value.length) { return value[0].substring(nameString.length, value[0].length); } 
+		const data = value[0].substring(nameString.length, value[0].length);
+		if (value.length) { return data.replace("=", ""); } 
 		else { return ""; }
 	}
 
