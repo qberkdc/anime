@@ -26,6 +26,13 @@ body {
 	top: 20%;
 }
 
+.timer {
+	position: absolute;
+	color: orange;
+	font-size: 0.9em;
+	top: 17%;
+}
+
 .ninmy {
 	background: url("https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_normal.png");
 	background-size: cover;
