@@ -79,16 +79,16 @@ $(window).on('load', function()
 
 	function updateDamage()
 	{
-		if (damage_power < 300)
+		if (damage_power < 500)
 		{
 			// Update damage bar status
-			$('.damage-bar').css('width', damage_power);
+			$('.damage-bar').css('width', (300 / 500 * damage_power);
 		}
 		else
 		{
 			// Update damage level
 			damage_power = 0;
-			damage_level = damage_level + 1;
+			damage_level += 1;
 		}
 	}
 
@@ -137,16 +137,16 @@ $(window).on('load', function()
 			var Oof = new Audio('sound/yahh.wav'); Oof.play();
 			
 			// Drop the health
-			hp = hp - (damage * damage_level);
+			hp -= (damage * damage_level);
 			
 			// Damage power & Award
-			damage_power = damage_power + 1;
-			dmgdeal = dmgdeal + (damage * damage_level)
+			damage_power += 1;
+			dmgdeal += (damage * damage_level);
 
 			if(dmgdeal >= dmgmax)
 			{
 				dmgdeal = 0;
-				coin = coin + dmgawrd;
+				coin += dmgawrd;
 			}
 			
 			// Update character status
@@ -185,8 +185,8 @@ $(window).on('load', function()
 			{
 				if(hp <= 0 && died == 1)
 				{
-					stage = stage + 1;
-					coin = coin + stgawrd;
+					stage += 1;
+					coin += stgawrd;
 					printStage(stage);
 					var playAudio = new Audio('sound/yamete_kudasai.mp3'); playAudio.play();
 					touchable = 0;
@@ -251,13 +251,13 @@ $(window).on('load', function()
 	// Load Data
 	function loadData()
 	{
-		if(_getCookie("data_hp") != "") hp = _getCookie("data_hp");
-		if(_getCookie("data_maxhp") != "") maxhp = _getCookie("data_maxhp");
-		if(_getCookie("data_damage_power") != "") damage_power = _getCookie("data_damage_power");
-		if(_getCookie("data_damage_level") != "") damage_level = _getCookie("data_damage_level");
-		if(_getCookie("data_stage") != "") stage = _getCookie("data_stage");
-		if(_getCookie("data_coin") != "") coin = _getCookie("data_coin");
-		if(_getCookie("data_dmgdeal") != "") dmgdeal = _getCookie("data_dmgdeal");
+		if(_getCookie("data_hp") != "") hp = parseInt(_getCookie("data_hp"));
+		if(_getCookie("data_maxhp") != "") maxhp = parseInt(_getCookie("data_maxhp"));
+		if(_getCookie("data_damage_power") != "") damage_power = parseInt(_getCookie("data_damage_power"));
+		if(_getCookie("data_damage_level") != "") damage_level = parseInt(_getCookie("data_damage_level"));
+		if(_getCookie("data_stage") != "") stage = parseInt(_getCookie("data_stage"));
+		if(_getCookie("data_coin") != "") coin = parseInt(_getCookie("data_coin"));
+		if(_getCookie("data_dmgdeal") != "") dmgdeal = parseInt(_getCookie("data_dmgdeal"));
 	}
 
 	// Fix Broken health
