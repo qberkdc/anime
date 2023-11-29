@@ -21,7 +21,7 @@ $(window).on('load', function()
 	function _getCookie(name)
 	{
 		const nameString = name + "="
-		const value = document.cookie.split(";").filter(item => { return item.includes(name) })
+		const value = document.cookie.split(";").filter(item => { return item.includes(nameString) })
 		const data = value[0].substring(nameString.length, value[0].length);
 		if (value.length) { return data.replace("=", ""); } 
 		else { return ""; }
