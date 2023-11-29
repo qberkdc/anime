@@ -5,35 +5,16 @@ $(window).on('load', function()
 	$('.win').css('display','none');
 
 	// Cookie Set
-	function setCookie(cname, cvalue, exdays)
+	function setCookie(cname, cvalue)
 	{
-		const d = new Date();
-		d.setTime(d.getTime() + (exdays*24*60*60*1000));
-		let expires = "expires="+ d.toUTCString();
-		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		document.cookie = cname + "=" + cvalue;
 	}
 
 	// Cookie Get
-	function getCookie(cname)
+	function getCookie(name) 
 	{
-		let name = cname + "=";
-		let decodedCookie = decodeURIComponent(document.cookie);
-		let ca = decodedCookie.split(';');
-	
-		for(let i = 0; i <ca.length; i++) 
-		{
-			let c = ca[i];
-			while (c.charAt(0) == ' ') 
-			{
-				c = c.substring(1);
-			}
-	
-			if (c.indexOf(name) == 0)
-			{
-				return c.substring(name.length, c.length);
-			}
-		}
-		return "";
+		let result = document.cookie.match("(^|[^;]+)\s*" + name + "\s*=\s*([^;]+)")
+		return result ? result.pop() : ""
 	}
 
 	// Variable Settings
