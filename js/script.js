@@ -26,7 +26,7 @@ $(window).on('load', function()
 		})
 		
 		if (value.length) {
-			return value[0].substring(name.length, value[0].length)
+			return value[0].substring(nameString.length, value[0].length)
 		} else {
 			return ""
 		}
