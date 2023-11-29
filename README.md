@@ -7,8 +7,13 @@
 > 🪵 **Change Log**
 >
 > **_`v0.1`_**
+> 
 > Cookie data added
+> 
 > Health & Power bar fixed
+> 
 > Variable updater fixed
+> 
 > Cookie data taker fixed
+> 
 > Timer added
