@@ -17,6 +17,21 @@ $(window).on('load', function()
 		return result ? result.pop() : ""
 	}
 
+	// Cookie Get > Which method
+	function _getCookie(name)
+	{
+		const nameString = name + "="
+		const value = document.cookie.split(";").filter(item => {
+			return item.includes(nameString)
+		})
+		
+		if (value.length) {
+			return value[0].substring(nameString.length, value[0].length)
+		} else {
+			return ""
+		}
+	}
+
 	// Variable Settings
 	var died = 0
 	var hp = 100;
@@ -229,13 +244,13 @@ $(window).on('load', function()
 	// Save Data
 	function saveData()
 	{
-		setCookie("data_hp", hp, 365);
-		setCookie("data_maxhp", maxhp, 365);
-		setCookie("data_damage_power", damage_power, 365);
-		setCookie("data_damage_level", damage_level, 365);
-		setCookie("data_stage", stage, 365);
-		setCookie("data_coin", coin, 365);
-		setCookie("data_dmgdeal", dmgdeal, 365);
+		setCookie("data_hp", hp);
+		setCookie("data_maxhp", maxhp);
+		setCookie("data_damage_power", damage_power);
+		setCookie("data_damage_level", damage_level);
+		setCookie("data_stage", stage);
+		setCookie("data_coin", coin);
+		setCookie("data_dmgdeal", dmgdeal);
 	}
 	
 	// Load Data
@@ -251,5 +266,5 @@ $(window).on('load', function()
 	}
 	
 	// Load data
-	loadData();
+	loadData(); updateHealth();
 })
