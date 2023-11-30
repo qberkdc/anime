@@ -14,8 +14,11 @@ body {
 
 .bg {
 	position: absolute;
-	opacity: 0.25;
+}
+
+.bg img {
 	z-index: 1;
+	opacity: 0.25;
 }
 
 .button {
