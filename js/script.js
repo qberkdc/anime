@@ -329,22 +329,36 @@ $(window).on('load', function()
 	// Auto timer
 	let taskID_timer = setInterval(timer, 1000);
 	
-	// Your name?
-	username = getCookie("data_username");
+	// Name checker
+	let taskID_setname = setInterval(setName, 200);
 	
-	if(username == "")
+	var isUserPress = 0;
+	
+	function setName()
 	{
-		username = prompt("Please enter your name:", "");
-		dead = 1;
-
-		if(!username.length)
+		// Your name?
+		username = getCookie("data_username");
+	
+		if(username == "" && !isUserPress)
 		{
+			dead = 1;
+			isUserPress = 1;
 			username = prompt("Please enter your name:", "");
-		}
-		else
-		{
-			setCookie("data_username", username);
-			alert("Welcome the game :D")
+
+			if(!username.length)
+			{
+				isUserPress = 0
+			}
+			else
+			{
+				setCookie("data_username", username);
+				alert("Welcome the game :D")
+				
+				clearInterval(taskID_setname)
+				
+				died = 0;
+				updateHealth();
+			}
 		}
 	}
 	
