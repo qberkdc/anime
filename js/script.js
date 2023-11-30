@@ -88,6 +88,31 @@ $(window).on('load', function()
 		}
 	})
 
+	$('#change-bg1').on('click', function()
+	{
+		$('bg').html('src', "images/ninmy_bg.png");
+	})
+
+	$('#change-bg2').on('click', function()
+	{
+		$('bg').html('src', "images/ninmy_bg2.png");
+	})
+	
+	$('#change-bg3').on('click', function()
+	{
+		$('bg').html('src', "images/ninmy_bg3.png");
+	})		
+
+	$('#change-bg4').on('click', function()
+	{
+		$('bg').html('src', "images/ninmy_bg4.png");
+	})
+
+	$('#change-bg5').on('click', function()
+	{
+		$('bg').html('src', "images/ninmy_bg5.png");
+	})
+
 	function updateHealth()
 	{
 		// Update text info
