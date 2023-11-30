@@ -40,6 +40,7 @@ $(window).on('load', function()
 	var stage = 1;
 	var sec = 30;
 	var energy = 0;
+	var maxenergy = 25;
 
 	var touchable = 1;
 
@@ -73,6 +74,15 @@ $(window).on('load', function()
 			powerUp();
 		}
 	})
+	
+	$('#energy_upgrade').on('click', function()
+	{
+		if(touchable == 1)
+		{
+			// Call function
+			energyUp();
+		}
+	})
 
 	function updateHealth()
 	{
@@ -87,7 +97,7 @@ $(window).on('load', function()
 	function updateEnergy()
 	{
 		// Update energy bar
-		$('.current-energy').css('width', (300 / 25 * energy));
+		$('.current-energy').css('width', (300 / maxenergy * energy));
 	}
 
 	function updateDamage()
@@ -141,10 +151,47 @@ $(window).on('load', function()
 			}, 1500);
 		}
 	}
+	
+	function energyUp()
+	{
+		// Calculate prices
+		var price = 2 * maxenergy;
+		var needs = price - coin;
+		
+		// Block the punch
+		touchable = 0;
+		
+		// Purchase process
+		if(price > coin)
+		{
+			// Purchase fail
+			$('.health').html(`It takes ${needs} coins to upgrade`);
+			var playAudio = new Audio('sound/upgrade_fail.mp3'); playAudio.play();
+			
+			setTimeout(() => 
+			{
+				updateHealth();
+				touchable = 1;
+			}, 1500);
+		}
+		else
+		{
+			// Purchase success
+			maxenergy += 5; coin -= price;
+			var playAudio = new Audio('sound/upgrade_success.mp3'); playAudio.play();
+			$('.health').html(`Upgrade successfull: ${maxenergy} Energy`);
+			
+			setTimeout(() => 
+			{
+				updateHealth();
+				touchable = 1;
+			}, 1500);
+		}
+	}
 			
 	function hit()
 	{
-		if(hp > 0 && touchable == 1 && energy < 25)
+		if(hp > 0 && touchable == 1 && energy < maxenergy)
 		{
 			isUserHit = 1;
 			
@@ -152,8 +199,8 @@ $(window).on('load', function()
 			var random_sound = Math.floor(Math.random() * 1);
 			let sound = "";
 			
-			if(random_sound) sound = "sound/ahh.wav";
-			if(!random_sound) sound = "sound/yahh.wav";
+			if(random_sound == 1) sound = "sound/ahh.wav";
+			if(random_sound == 0) sound = "sound/yahh.wav";
 			
 			var Oof = new Audio(sound); Oof.play();
 			
@@ -261,6 +308,8 @@ $(window).on('load', function()
 		setCookie("data_coin", coin);
 		setCookie("data_dmgdeal", dmgdeal);
 		setCookie("data_sec", sec);
+		setCookie("data_energy", energy);
+		setCookie("data_maxenergy", maxenergy);
 	}
 	
 	// Load Data
@@ -274,6 +323,8 @@ $(window).on('load', function()
 		if(_getCookie("data_coin") != "") coin = parseInt(_getCookie("data_coin"));
 		if(_getCookie("data_dmgdeal") != "") dmgdeal = parseInt(_getCookie("data_dmgdeal"));
 		if(_getCookie("data_sec") != "") sec = parseInt(_getCookie("data_sec"));
+		if(_getCookie("data_energy") != "") energy = parseInt(_getCookie("data_energy"));
+		if(_getCookie("data_maxenergy") != "") maxenergy = parseInt(_getCookie("data_maxenergy"));
 	}
 
 	// Fix Broken health
@@ -330,6 +381,7 @@ $(window).on('load', function()
 				died = 0;
 				touchable = 1;
 				energy = 0;
+				maxenergy = 25;
 			}, 4000);
 		}, 1000);
 	}
