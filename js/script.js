@@ -378,6 +378,12 @@ $(window).on('load', function()
 				endGame();
 				died = 1;
 			}
+			
+			if(sec ==5)
+			{
+				clearInterval(taskID_energy);
+				taskID_energy = setInterval(setEnergy, 125);
+			}
 		}
 	}
 		
@@ -415,6 +421,8 @@ $(window).on('load', function()
 		died = 1;
 		hp = -1;
 		sec = 30;
+		clearInterval(taskID_energy);
+		taskID_energy = setInterval(setEnergy, 300);
 		var playAudio = new Audio('sound/yamete_kudasai.mp3'); 
 		playAudio.play();
 	}
