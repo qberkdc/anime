@@ -12,6 +12,14 @@ body {
 	align-items: center;
 }
 
+.ninmy_bg {
+	background-image: url('images/ninmy_bg2.png');
+	background-repeat: no-repeat;
+    	background-size: cover;
+  	background-attachment: fixed;
+}
+
+
 .button {
 	background-color: #202020; /* Grey & Black */
 	border: none;
