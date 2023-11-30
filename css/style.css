@@ -25,7 +25,7 @@ body {
 	background-color: #202020; /* Grey & Black */
 	border: none;
 	color: white;
-	padding: 3px 14px;
+	padding: 3px 10px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
@@ -42,14 +42,14 @@ body {
 .health {
 	position: absolute;
 	color: white;
-	font-size: 0.45em;
+	font-size: 0.58em;
 	top: 1%;
 }
 
 .name {
 	position: absolute;
 	color: white;
-	font-size: 0.45em;
+	font-size: 0.58em;
 	left: 3%;
 	top: 1%;
 }
@@ -57,8 +57,8 @@ body {
 .timer {
 	position: absolute;
 	color: orange;
-	font-size: 0.7em;
-	top: 3%;
+	font-size: 0.8em;
+	top: 4%;
 }
 
 .health-bar {
