@@ -12,6 +12,10 @@ body {
 	align-items: center;
 }
 
+.opacity_bg {
+	opacity: 0.25;
+}
+
 .button {
 	background-color: #202020; /* Grey & Black */
 	border: none;
