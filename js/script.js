@@ -41,6 +41,10 @@ $(window).on('load', function()
 	var sec = 30;
 	var energy = 0;
 	var maxenergy = 25;
+	
+	var level = 1;
+	var exp = 0;
+	var req = 20;
 
 	var touchable = 1;
 
@@ -88,7 +92,7 @@ $(window).on('load', function()
 	{
 		// Update text info
 		$('.health').html(`Coins: ${coin} | Damage Lv: ${damage_level} | Stage: ${stage} | HP: ${hp}/${maxhp}`);
-		$('.name').html(`${username}`);
+		$('.name').html(`${username}  |  Level: ${level}  |  Exp: (${exp}/${req})`);
 		
 		// Update health bar
 		$('.current-health').css('width', (300 / maxhp * hp));
@@ -244,6 +248,9 @@ $(window).on('load', function()
 					coin += stgawrd;
 					printStage(stage);
 					touchable = 0;
+					
+					// Give user exp
+					exp += 5;
 				}
 			}, 10);
 
@@ -310,6 +317,10 @@ $(window).on('load', function()
 		setCookie("data_sec", sec);
 		setCookie("data_energy", energy);
 		setCookie("data_maxenergy", maxenergy);
+		
+		setCookie("data_level", level);
+		setCookie("data_exp", exp);
+		setCookie("data_req", req);
 	}
 	
 	// Load Data
@@ -325,6 +336,10 @@ $(window).on('load', function()
 		if(_getCookie("data_sec") != "") sec = parseInt(_getCookie("data_sec"));
 		if(_getCookie("data_energy") != "") energy = parseInt(_getCookie("data_energy"));
 		if(_getCookie("data_maxenergy") != "") maxenergy = parseInt(_getCookie("data_maxenergy"));
+		
+		if(_getCookie("data_level") != "") level = parseInt(_getCookie("data_level"));
+		if(_getCookie("data_exp") != "") exp = parseInt(_getCookie("data_exp"));
+		if(_getCookie("data_req") != "") req = parseInt(_getCookie("data_req"));
 	}
 
 	// Fix Broken health
@@ -419,25 +434,35 @@ $(window).on('load', function()
 	// Energy loader
 	let taskID_energy = setInterval(setEnergy, 300);
 	
-	var isUserPress = 0;
+	// PreThink
+	let taskID_prethink = setInterval(client_PreThink, 50);
+	
+	function client_PreThink()
+	{
+		// Level Up System
+		if(exp >= req)
+		{
+			exp -= req;
+			level += 1;
+			req += 25;
+		}
+	}
 	
 	function setName()
 	{
 		// Your name?
 		username = getCookie("data_username");
 	
-		if(username == "" && !isUserPress)
+		if(username == "")
 		{
 			dead = 1;
-			isUserPress = 1;
+			touchable = 0;
 			clearInterval(taskID_timer)
 			username = prompt("Please enter your name:", "");
 
 			if(!username.length)
 			{
 				alert("If you can't write your name, can't start the game");
-				setName();
-				isUserPress = 0;
 			}
 			else
 			{
@@ -449,6 +474,7 @@ $(window).on('load', function()
 				
 				died = 0;
 				sec = 30;
+				touchable = 1;
 				updateHealth();
 			}
 		}
