@@ -162,6 +162,11 @@ $(window).on('load', function()
 					$('.ninmy').css('background', `url(${ninmy_hurt})`);
 					$('.blood').css('background', `url(${ninmy_blood})`);
 				}
+				else
+				{
+					// Kill character
+					killNinmy();
+				}
 			}, 350);
 
 			// Character is alive
@@ -182,7 +187,6 @@ $(window).on('load', function()
 					stage += 1;
 					coin += stgawrd;
 					printStage(stage);
-					killNinmy();
 					touchable = 0;
 				}
 			}, 10);
