@@ -269,6 +269,11 @@ $(window).on('load', function()
 	{
 		if(died == 0)
 		{
+			if(sec > 20) $('.timer').css('.color', `white`);
+			if(sec > 15) $('.timer').css('.color', `yellow`);
+			if(sec <= 15) $('.timer').css('.color', `orange`);
+			if(sec <= 5) $('.timer').css('.color', `red`);
+			
 			$('.timer').html(`${sec}`);
 			
 			if(sec > 0)
@@ -285,32 +290,37 @@ $(window).on('load', function()
 		
 	function endGame()
 	{
-		$('.health').html(`Game over`);
-		killNinmy();
-		
 		setTimeout(() =>
 		{
-			$('.ninmy').css('background', `url(${ninmy_normal})`);
-			$('.blood').css('background', `url(${ninmy_null})`);
-			coin = 0;
-			damage_level = 1;
-			damage_power = 0;
-			hp = 100;
-			maxhp = 100;
-			stage = 1;
-			updateHealth()
-			died = 0;
-			touchable = 1;
-		}, 2000);
+			$('.health').html(`Game over`);
+			killNinmy();
+		
+			setTimeout(() =>
+			{
+				$('.ninmy').css('background', `url(${ninmy_normal})`);
+				$('.blood').css('background', `url(${ninmy_null})`);
+				coin = 0;
+				damage_level = 1;
+				damage_power = 0;
+				hp = 100;
+				maxhp = 100;
+				stage = 1;
+				updateHealth()
+				died = 0;
+				touchable = 1;
+			}, 4000);
+		}, 1000);
 	}
 	
 	function killNinmy()
 	{
 		$('.ninmy').css('background', `url(${ninmy_dead})`);
 		$('.blood').css('background', `url(${ninmy_blood})`);
+		$('.timer').html(``);
 		var playAudio = new Audio('sound/yamete_kudasai.mp3'); playAudio.play();
 		died = 1;
 		hp = -1;
+		sec = 30;
 	}
 		
 	// Auto data saver
