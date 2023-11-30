@@ -139,7 +139,8 @@ $(window).on('load', function()
 		{
 			// Play pain sound
 			var random_sound = Math.random() * 1;
-			var Oof = new Audio("sound/" + random_sound ? "y" : "" + "ahh.wav"); Oof.play();
+			let sound = "sound/" + random_sound ? "y" : "" + "ahh.wav";
+			var Oof = new Audio(sound); Oof.play();
 			
 			// Drop the health
 			hp -= (damage * damage_level);
