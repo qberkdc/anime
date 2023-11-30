@@ -152,6 +152,9 @@ $(window).on('load', function()
 			
 			// Update character status
 			updateHealth(); updateDamage(); 
+			
+			// If health is lower than 0
+			if(hp < 0) hp = 0;
 
 			// Change character status
 			setTimeout(() => 
@@ -166,8 +169,14 @@ $(window).on('load', function()
 				{
 					// Kill character
 					killNinmy();
+					
+					// Switch next stage
+					stage += 1;
+					coin += stgawrd;
+					printStage(stage);
+					touchable = 0;
 				}
-			}, 350);
+			}, 10);
 
 			// Character is alive
 			setTimeout(() => 
@@ -178,18 +187,6 @@ $(window).on('load', function()
 					$('.blood').css('background', `url(${ninmy_null})`);
 				}
 			}, 1000);
-			
-			// Character is died
-			setTimeout(() => 
-			{
-				if(hp <= 0 && died == 1)
-				{
-					stage += 1;
-					coin += stgawrd;
-					printStage(stage);
-					touchable = 0;
-				}
-			}, 10);
 			
 			// Award message
 			if(hp <= 0)
