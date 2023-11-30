@@ -22,21 +22,21 @@ body {
 .health {
 	position: absolute;
 	color: white;
-	font-size: 0.9em;
+	font-size: 0.7em;
 	top: 20%;
 }
 
 .name {
 	position: absolute;
 	color: white;
-	font-size: 0.6em;
+	font-size: 0.7em;
 	top: 18%;
 }
 
 .timer {
 	position: absolute;
 	color: orange;
-	font-size: 0.9em;
+	font-size: 0.7em;
 	top: 17%;
 }
 
