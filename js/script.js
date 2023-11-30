@@ -329,7 +329,7 @@ $(window).on('load', function()
 	let taskID_timer = setInterval(timer, 1000);
 	
 	// Your name?
-	let username = _getCookie("data_username");
+	username = _getCookie("data_username");
 	
 	if(username == "")
 	{
