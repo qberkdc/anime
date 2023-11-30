@@ -39,6 +39,7 @@ $(window).on('load', function()
 	var damage_level = 1;
 	var stage = 1;
 	var sec = 30;
+	var energy = 0;
 
 	var touchable = 1;
 
@@ -53,6 +54,8 @@ $(window).on('load', function()
 	var dmgmax = 250;
 	var dmgawrd = 3;
 	var stgawrd = 10;
+	
+	var isUserHit = 0
 	
 	let username = ""
 	
@@ -79,6 +82,12 @@ $(window).on('load', function()
 		
 		// Update health bar
 		$('.current-health').css('width', (300 / maxhp * hp));
+	}
+	
+	function updateEnergy()
+	{
+		// Update energy bar
+		$('.current-energy').css('width', (300 / 25 * energy));
 	}
 
 	function updateDamage()
@@ -135,8 +144,10 @@ $(window).on('load', function()
 			
 	function hit()
 	{
-		if(hp > 0 && touchable == 1)
+		if(hp > 0 && touchable == 1 && energy < 25)
 		{
+			isUserHit = 1;
+			
 			// Play pain sound
 			var random_sound = Math.floor(Math.random() * 1);
 			let sound = "";
@@ -145,6 +156,8 @@ $(window).on('load', function()
 			if(!random_sound) sound = "sound/yahh.wav";
 			
 			var Oof = new Audio(sound); Oof.play();
+			
+			energy += 1
 			
 			// Drop the health
 			hp -= (damage * damage_level);
@@ -160,7 +173,7 @@ $(window).on('load', function()
 			}
 			
 			// Update character status
-			updateHealth(); updateDamage(); 
+			updateHealth(); updateDamage(); updateEnergy();
 			
 			// If health is lower than 0
 			if(hp < 0) hp = 0;
@@ -194,6 +207,7 @@ $(window).on('load', function()
 				{
 					$('.ninmy').css('background', `url(${ninmy_normal})`);
 					$('.blood').css('background', `url(${ninmy_null})`);
+					isUserHit = 0;
 				}
 			}, 1000);
 			
@@ -328,7 +342,16 @@ $(window).on('load', function()
 		var playAudio = new Audio('sound/yamete_kudasai.mp3'); 
 		playAudio.play();
 	}
-		
+	
+	function setEnergy()
+	{
+		if(i!sUserHit)
+		{
+			if(energy > 0) energy -= 1;
+			updateEnergy();
+		}
+	}
+	
 	// Auto data saver
 	let taskID_data = setInterval(saveData, 100);
 	
@@ -337,6 +360,9 @@ $(window).on('load', function()
 	
 	// Name checker
 	let taskID_setname = setInterval(setName, 200);
+	
+	// Energy loader
+	let taskID_energy = setInterval(setEnergy, 500);
 	
 	var isUserPress = 0;
 	
