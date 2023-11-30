@@ -54,6 +54,8 @@ $(window).on('load', function()
 	var dmgawrd = 3;
 	var stgawrd = 10;
 	
+	let username = ""
+	
 	$('#berkay').on('click', function()
 	{
 		// Call function
