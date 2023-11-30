@@ -435,15 +435,16 @@ $(window).on('load', function()
 
 			if(!username.length)
 			{
-				alert("If you can't write your name, can't start the game")
-				isUserPress = 0
+				alert("If you can't write your name, can't start the game");
+				setName();
+				isUserPress = 0;
 			}
 			else
 			{
 				setCookie("data_username", username);
-				alert(`Welcome the game ${username}`)
+				alert(`Welcome the game ${username}`);
 				
-				clearInterval(taskID_setname)
+				clearInterval(taskID_setname);
 				taskID_timer = setInterval(timer, 1000);
 				
 				died = 0;
