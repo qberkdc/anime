@@ -13,10 +13,10 @@ body {
 }
 
 .button {
-	background-color: #04AA6D; /* Green */
+	background-color: #202020; /* Grey & Black */
 	border: none;
 	color: white;
-	padding: 15px 32px;
+	padding: 8px 24px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
