@@ -23,7 +23,7 @@ body {
 	position: absolute;
 	color: white;
 	font-size: 0.7em;
-	top: 25%;
+	top: 24%;
 }
 
 .name {
@@ -38,7 +38,7 @@ body {
 	position: absolute;
 	color: orange;
 	font-size: 0.7em;
-	top: 21%;
+	top: 22%;
 }
 
 .health-bar {
