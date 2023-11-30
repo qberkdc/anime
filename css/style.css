@@ -12,6 +12,12 @@ body {
 	align-items: center;
 }
 
+.bgImage {
+	background-image: "";
+	width: 64;
+	height: 64;
+}
+
 .bg {
 	position: absolute;
 }
