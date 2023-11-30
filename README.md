@@ -4,9 +4,10 @@
 > 
 > 🕹️ • **Try it Game** [__**`Play`**__](https://qberkdc.github.io/anime/)
 >
-> 🪵 **Change Log**
->
 > 
+> 🪵 **Change Log**
+> 
+>  
 > **_`v0.1`_**
 > 
 > Cookie data added
@@ -18,3 +19,17 @@
 > Cookie data taker fixed
 > 
 > Timer added
+>
+> 
+> **_`v0.2`_**
+>
+> 
+> Level System
+>
+> Energy Bar
+>
+> Energy Upgrade
+>
+> Username add-on
+>
+> Level Gain on win stage
