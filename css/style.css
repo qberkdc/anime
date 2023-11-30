@@ -15,6 +15,8 @@ body {
 	background-repeat: no-repeat;
     	background-size: cover;
   	background-attachment: fixed;
+
+	opacity: 0.2;
 }
 
 .button {
