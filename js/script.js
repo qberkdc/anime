@@ -206,8 +206,8 @@ $(window).on('load', function()
 			isUserHit = 1;
 			
 			// Play pain sound
-			var random_sound = Math.floor(Math.random() * 1);
-			let sound = "";
+			var random_sound = getRandom(0, 1);
+			let sound
 			
 			if(random_sound == 1) sound = "sound/ahh.wav";
 			if(random_sound == 0) sound = "sound/yahh.wav";
@@ -495,6 +495,11 @@ $(window).on('load', function()
 				updateHealth();
 			}
 		}
+	}
+	
+	function getRandom(min, max)
+	{
+		return Math.floor(Math.random() * (max - min + 1) + min);
 	}
 	
 	// Load data
