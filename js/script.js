@@ -152,18 +152,12 @@ $(window).on('load', function()
 			
 			// Update character status
 			updateHealth(); updateDamage(); 
-			if(hp <= 0) { died = 1; }
+			if(hp <= 0) { killNinmy() }
 
 			// Change character status
 			setTimeout(() => 
 			{
-				if(hp <= 0)
-				{
-					// Make character dead
-					$('.ninmy').css('background', `url(${ninmy_dead})`);
-					$('.blood').css('background', `url(${ninmy_blood})`);
-				}
-				else if(hp > 0)
+				if(hp > 0)
 				{
 					// Make hurt effect
 					$('.ninmy').css('background', `url(${ninmy_hurt})`);
@@ -189,9 +183,8 @@ $(window).on('load', function()
 					stage += 1;
 					coin += stgawrd;
 					printStage(stage);
-					var playAudio = new Audio('sound/yamete_kudasai.mp3'); playAudio.play();
+					killNinmy();
 					touchable = 0;
-					sec = 30;
 				}
 			}, 10);
 			
@@ -269,10 +262,10 @@ $(window).on('load', function()
 	{
 		if(died == 0)
 		{
-			if(sec > 20) $('.timer').css('.color', `white`);
-			if(sec > 15) $('.timer').css('.color', `yellow`);
-			if(sec <= 15) $('.timer').css('.color', `orange`);
-			if(sec <= 5) $('.timer').css('.color', `red`);
+			if(sec > 20) $('.timer').css('color', `white`);
+			if(sec > 15) $('.timer').css('color', `yellow`);
+			if(sec <= 15) $('.timer').css('color', `orange`);
+			if(sec <= 5) $('.timer').css('color', `red`);
 			
 			$('.timer').html(`${sec}`);
 			
