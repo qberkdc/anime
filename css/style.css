@@ -33,14 +33,14 @@ body {
 .health {
 	position: absolute;
 	color: white;
-	font-size: 0.65em;
+	font-size: 0.45em;
 	top: 1%;
 }
 
 .name {
 	position: absolute;
 	color: white;
-	font-size: 0.65em;
+	font-size: 0.45em;
 	left: 3%;
 	top: 1%;
 }
@@ -48,8 +48,8 @@ body {
 .timer {
 	position: absolute;
 	color: orange;
-	font-size: 0.65em;
-	top: 2%;
+	font-size: 0.7em;
+	top: 3%;
 }
 
 .health-bar {
