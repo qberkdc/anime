@@ -40,7 +40,7 @@ $(window).on('load', function()
 	var stage = 1;
 	var sec = 30;
 	var energy = 0;
-	var maxenergy = 25;
+	var maxenergy = 30;
 	
 	var level = 1;
 	var exp = 0;
@@ -58,7 +58,7 @@ $(window).on('load', function()
 	var dmgdeal = 0;
 	var dmgmax = 250;
 	var dmgawrd = 3;
-	var stgawrd = 10;
+	var stgawrd = 5;
 	
 	var isUserHit = 0
 	
@@ -462,7 +462,7 @@ $(window).on('load', function()
 		}
 		
 		// Stage award
-		stgawrd = 10 + (stage * 2);
+		stgawrd = stage * 5
 	}
 	
 	function setName()
