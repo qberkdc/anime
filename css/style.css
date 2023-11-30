@@ -27,6 +27,12 @@ body {
 	opacity: 0.25;
 }
 
+.select_background {
+	opacity: 0.4;
+	z-index: 6;
+	border: 0.2
+}
+
 .button {
 	background-color: #202020; /* Grey & Black */
 	border: none;
