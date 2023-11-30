@@ -266,7 +266,7 @@ $(window).on('load', function()
 			if(sec <= 15) $('.timer').css('color', `orange`);
 			if(sec <= 5) $('.timer').css('color', `red`);
 			
-			if(sec <= 5) var playAudio = new Audio('sound/beep.wav'); playAudio.play();
+			if(sec <= 5) var playAudio = new Audio('sound/beep.mp3'); playAudio.play();
 			
 			$('.timer').html(`${sec}`);
 			
@@ -278,7 +278,7 @@ $(window).on('load', function()
 			if(!sec)
 			{
 				endGame();
-				var playAudio = new Audio('sound/beep.wav'); playAudio.play();
+				var playAudio = new Audio('sound/beep.mp3'); playAudio.play();
 			}
 		}
 	}
