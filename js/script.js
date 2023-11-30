@@ -168,7 +168,7 @@ $(window).on('load', function()
 					$('.ninmy').css('background', `url(${ninmy_hurt})`);
 					$('.blood').css('background', `url(${ninmy_blood})`);
 				}
-				else
+				else if (died == 0)
 				{
 					// Kill character
 					killNinmy();
@@ -282,6 +282,7 @@ $(window).on('load', function()
 			if(!sec)
 			{
 				endGame();
+				died = 1;
 			}
 		}
 	}
@@ -329,7 +330,7 @@ $(window).on('load', function()
 	let taskID_timer = setInterval(timer, 1000);
 	
 	// Your name?
-	username = _getCookie("data_username");
+	username = getCookie("data_username");
 	
 	if(username == "")
 	{
