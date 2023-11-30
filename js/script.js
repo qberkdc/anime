@@ -226,6 +226,8 @@ $(window).on('load', function()
 				setTimeout(() => 
 				{
 					nextStage();
+					isUserHit = 0;
+					energy = 0;
 				}, 6000);
 			}
 		}
@@ -327,6 +329,7 @@ $(window).on('load', function()
 				updateHealth()
 				died = 0;
 				touchable = 1;
+				energy = 0;
 			}, 4000);
 		}, 1000);
 	}
@@ -362,7 +365,7 @@ $(window).on('load', function()
 	let taskID_setname = setInterval(setName, 200);
 	
 	// Energy loader
-	let taskID_energy = setInterval(setEnergy, 500);
+	let taskID_energy = setInterval(setEnergy, 300);
 	
 	var isUserPress = 0;
 	
