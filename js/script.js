@@ -139,9 +139,10 @@ $(window).on('load', function()
 		{
 			// Play pain sound
 			var random_sound = Math.random() * 1;
+			let sound = "";
 			
-			if(random_sound) let sound = "sound/ahh.wav";
-			if(!random_sound) let sound = "sound/yahh.wav";
+			if(random_sound) sound = "sound/ahh.wav";
+			else if(!random_sound) sound = "sound/yahh.wav";
 			
 			var Oof = new Audio(sound); Oof.play();
 			
