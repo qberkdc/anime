@@ -33,22 +33,22 @@ body {
 .health {
 	position: absolute;
 	color: white;
-	font-size: 0.7em;
+	font-size: 0.5em;
 	top: 2%;
 }
 
 .name {
 	position: absolute;
 	color: white;
-	font-size: 0.7em;
-	left: 4%;
-	top: 2%;
+	font-size: 0.5em;
+	left: 3%;
+	top: 1%;
 }
 
 .timer {
 	position: absolute;
 	color: orange;
-	font-size: 0.7em;
+	font-size: 0.5em;
 	top: 4%;
 }
 
