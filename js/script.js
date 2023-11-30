@@ -73,6 +73,7 @@ $(window).on('load', function()
 	{
 		// Update text info
 		$('.health').html(`Coins: ${coin} | Damage Lv: ${damage_level} | Stage: ${stage} | HP: ${hp}/${maxhp}`);
+		$('.name').html(`${username}`);
 		
 		// Update health bar
 		$('.current-health').css('width', (300 / maxhp * hp));
@@ -96,7 +97,7 @@ $(window).on('load', function()
 	function powerUp()
 	{
 		// Calculate prices
-		var price = 6 * damage_level;
+		var price = 15 * damage_level;
 		var needs = price - coin;
 		
 		// Block the punch
@@ -235,6 +236,7 @@ $(window).on('load', function()
 		setCookie("data_stage", stage);
 		setCookie("data_coin", coin);
 		setCookie("data_dmgdeal", dmgdeal);
+		setCookie("data_sec", sec);
 	}
 	
 	// Load Data
@@ -247,6 +249,7 @@ $(window).on('load', function()
 		if(_getCookie("data_stage") != "") stage = parseInt(_getCookie("data_stage"));
 		if(_getCookie("data_coin") != "") coin = parseInt(_getCookie("data_coin"));
 		if(_getCookie("data_dmgdeal") != "") dmgdeal = parseInt(_getCookie("data_dmgdeal"));
+		if(_getCookie("data_sec") != "") sec = parseInt(_getCookie("data_sec"));
 	}
 
 	// Fix Broken health
@@ -322,6 +325,25 @@ $(window).on('load', function()
 	
 	// Auto timer
 	let taskID_timer = setInterval(timer, 1000);
+	
+	// Your name?
+	let username = _getCookie("data_username");
+	
+	if(username == "")
+	{
+		username = prompt("Please enter your name:", "");
+		dead = 1;
+
+		if(!username.length)
+		{
+			username = prompt("Please enter your name:", "");
+		}
+		else
+		{
+			setCookie("data_username", username);
+			alert("Welcome the game :D")
+		}
+	}
 	
 	// Load data
 	loadData(); fixHealth(); updateHealth();
