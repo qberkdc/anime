@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+	#loading {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items:center;
+		justify-content:center;
+		background-color: #fff;
+		z-index: 999
+	}
+
+	<div id="loading">
+		<img src="images/loader.gif" alt="Yükleniyor..." />
+	</div> 
+
+	<script>
+		window.addEventListener('load', fg_load)
+   		function fg_load() {
+        		document.getElementById('loading').style.display = 'none'
+ 		}
+	</script>
+
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
