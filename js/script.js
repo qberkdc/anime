@@ -345,7 +345,7 @@ $(window).on('load', function()
 	
 	function setEnergy()
 	{
-		if(i!sUserHit)
+		if(!isUserHit)
 		{
 			if(energy > 0) energy -= 1;
 			updateEnergy();
