@@ -23,21 +23,45 @@ body {
 	position: absolute;
 	color: white;
 	font-size: 0.7em;
-	top: 20%;
+	top: 25%;
 }
 
 .name {
 	position: absolute;
 	color: white;
 	font-size: 0.7em;
-	top: 18%;
+	top: 23%;
 }
 
 .timer {
 	position: absolute;
 	color: orange;
 	font-size: 0.7em;
-	top: 17%;
+	top: 21%;
+}
+
+.health-bar {
+	width: 300px;
+	height: 5px;
+	background-color: #eee;
+}
+
+.current-health {
+	width: 300px;
+	height: 5px;
+	background-color: red;
+}
+
+.damage_bar {
+	width: 300px;
+	height: 5px;
+	background-color: #eee;
+}
+
+.damage-bar {
+	width: 0px;
+	height: 5px;
+	background-color: orange;
 }
 
 .ninmy {
@@ -76,34 +100,6 @@ body {
 	position: absolute;
 	right: 5%;
 	display: none;
-}
-
-.health-bar {
-	width: 300px;
-	height: 11px;
-	background-color: #eee;
-	top: 28%;
-}
-
-.damage_bar {
-	width: 300px;
-	height: 8px;
-	background-color: #eee;
-	top: 20%;
-}
-
-.current-health {
-	width: 300px;
-	height: 11px;
-	background-color: red;
-	top: 28%;
-}
-
-.damage-bar {
-	width: 0px;
-	height: 8px;
-	background-color: orange;
-	top: 20%;
 }
 
 #berkay {
