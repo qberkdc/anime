@@ -52,6 +52,18 @@ body {
 	background-color: red;
 }
 
+.energy-bar {
+	width: 300px;
+	height: 5px;
+	background-color: #eee;
+}
+
+.current-energy {
+	width: 0px;
+	height: 5px;
+	background-color: green;
+}
+
 .damage_bar {
 	width: 300px;
 	height: 5px;
