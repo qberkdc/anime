@@ -10,7 +10,9 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
 
+.ninmy_background {
 	background: url("https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg2.png");
 	background-repeat: no-repeat;
     	background-size: cover;
