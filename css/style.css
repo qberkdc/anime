@@ -13,6 +13,7 @@ body {
 }
 
 .opacity_bg {
+	background: url("https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg3.png");
 	opacity: 0.25;
 	z-index: 1;
 }
