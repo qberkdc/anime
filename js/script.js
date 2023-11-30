@@ -365,6 +365,7 @@ $(window).on('load', function()
 				taskID_timer = setInterval(timer, 1000);
 				
 				died = 0;
+				sec = 30;
 				updateHealth();
 			}
 		}
