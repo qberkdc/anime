@@ -30,7 +30,6 @@ body {
 .select_background {
 	opacity: 0.4;
 	z-index: 6;
-	border: 0.2
 }
 
 .button {
