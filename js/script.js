@@ -138,7 +138,8 @@ $(window).on('load', function()
 		if(hp > 0 && touchable == 1)
 		{
 			// Play pain sound
-			var Oof = new Audio('sound/yahh.wav'); Oof.play();
+			var random_sound = Math.random() * 1;
+			var Oof = new Audio("sound/" + random_sound ? "y" : "" + "ahh.wav"); Oof.play();
 			
 			// Drop the health
 			hp -= (damage * damage_level);
@@ -343,6 +344,7 @@ $(window).on('load', function()
 		{
 			dead = 1;
 			isUserPress = 1;
+			clearInterval(taskID_timer)
 			username = prompt("Please enter your name:", "");
 
 			if(!username.length)
@@ -356,6 +358,7 @@ $(window).on('load', function()
 				alert(`Welcome the game ${username}`)
 				
 				clearInterval(taskID_setname)
+				taskID_timer = setInterval(timer, 1000);
 				
 				died = 0;
 				updateHealth();
@@ -364,5 +367,11 @@ $(window).on('load', function()
 	}
 	
 	// Load data
-	loadData(); fixHealth(); updateHealth();
+	loadData()
+	
+	// Fix Health
+	fixHealth()
+	
+	// Update Health
+	updateHealth();
 })
