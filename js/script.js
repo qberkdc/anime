@@ -266,8 +266,6 @@ $(window).on('load', function()
 			if(sec <= 15) $('.timer').css('color', `orange`);
 			if(sec <= 5) $('.timer').css('color', `red`);
 			
-			if(sec <= 5) playbackBeep();
-			
 			$('.timer').html(`${sec}`);
 			
 			if(sec > 0)
@@ -278,15 +276,8 @@ $(window).on('load', function()
 			if(!sec)
 			{
 				endGame();
-				playbackBeep();
 			}
 		}
-	}
-	
-	function playbackBeep()
-	{
-		var sound = new Audio('sound/beep.mp3');
-		sound.play();
 	}
 		
 	function endGame()
@@ -318,10 +309,11 @@ $(window).on('load', function()
 		$('.ninmy').css('background', `url(${ninmy_dead})`);
 		$('.blood').css('background', `url(${ninmy_blood})`);
 		$('.timer').html(``);
-		var playAudio = new Audio('sound/yamete_kudasai.mp3'); playAudio.play();
 		died = 1;
 		hp = -1;
 		sec = 30;
+		var playAudio = new Audio('sound/yamete_kudasai.mp3'); 
+		playAudio.play();
 	}
 		
 	// Auto data saver
