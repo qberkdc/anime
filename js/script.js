@@ -152,7 +152,6 @@ $(window).on('load', function()
 			
 			// Update character status
 			updateHealth(); updateDamage(); 
-			if(hp <= 0) { killNinmy() }
 
 			// Change character status
 			setTimeout(() => 
@@ -263,9 +262,11 @@ $(window).on('load', function()
 		if(died == 0)
 		{
 			if(sec > 20) $('.timer').css('color', `white`);
-			if(sec > 15) $('.timer').css('color', `yellow`);
+			if(sec > 15 && sec <= 20) $('.timer').css('color', `yellow`);
 			if(sec <= 15) $('.timer').css('color', `orange`);
 			if(sec <= 5) $('.timer').css('color', `red`);
+			
+			if(sec <= 5) var playAudio = new Audio('sound/beep.wav'); playAudio.play();
 			
 			$('.timer').html(`${sec}`);
 			
@@ -277,6 +278,7 @@ $(window).on('load', function()
 			if(!sec)
 			{
 				endGame();
+				var playAudio = new Audio('sound/beep.wav'); playAudio.play();
 			}
 		}
 	}
