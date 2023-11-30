@@ -449,7 +449,7 @@ $(window).on('load', function()
 	let taskID_energy = setInterval(setEnergy, 300);
 	
 	// PreThink
-	let taskID_prethink = setInterval(client_PreThink, 50);
+	let taskID_prethink = setInterval(client_PreThink, 200);
 	
 	function client_PreThink()
 	{
@@ -460,6 +460,9 @@ $(window).on('load', function()
 			level += 1;
 			req += 25;
 		}
+		
+		// Stage award
+		stgawrd = 10 + (stage * 2);
 	}
 	
 	function setName()
