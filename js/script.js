@@ -75,8 +75,8 @@ $(window).on('load', function()
 		if(touchable == 1)
 		{
 			// Call function
-			let amount = prompt("How much improve ?");
-			powerUp(amount);
+			let amount = prompt("[ Damage ]: How much improve ?");
+			powerUp(parseInt(amount));
 		}
 	})
 	
@@ -85,8 +85,8 @@ $(window).on('load', function()
 		if(touchable == 1)
 		{
 			// Call function
-			let amount = prompt("How much improve ?");
-			energyUp(amount);
+			let amount = prompt("[ Energy ]: How much improve ?");
+			energyUp(parseInt(amount));
 		}
 	})
 
@@ -127,13 +127,13 @@ $(window).on('load', function()
 		}
 	}
 
-	function powerUp()
+	function powerUp(amount)
 	{
 		// Calculate prices
 		var price = amount * ( 15 * damage_level );
 		var needs = price - coin;
 		
-		if(!ParseInt(amount))
+		if(!parseInt(amount))
 		{
 			alert("Wrong amount");
 			return;
@@ -176,7 +176,7 @@ $(window).on('load', function()
 		var price = amount * ( 2 * maxenergy );
 		var needs = price - coin;
 		
-		if(!ParseInt(amount))
+		if(!parseInt(amount))
 		{
 			alert("Wrong amount");
 			return;
