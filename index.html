@@ -21,8 +21,11 @@
 	<script>
 		window.addEventListener('load', fg_load)
    		function fg_load() {
+			dead = 1; touchable = 0;
 			setTimeout(() => {
-				document.getElementById('loading').style.display = 'none'
+				document.getElementById('loading').style.display = 'none';
+				dead = 0; touchable = 1;
+
 			}, 4000);
  		}
 	</script>
