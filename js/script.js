@@ -234,7 +234,7 @@ $(window).on('load', function()
 			energy += 1
 			
 			// Drop the health
-			hp -= (damage * damage_level);
+			hp -= (getRandom(2, 6) + (damage * damage_level));
 			
 			// Damage power & Award
 			damage_power += 1;
