@@ -205,6 +205,9 @@ $(window).on('load', function()
 		{
 			isUserHit = 1;
 			
+			// Macro blocker
+			touchable = 0; setTimeout(() => { touchable = 1 }, 60);
+			
 			// Play pain sound
 			var random_sound = getRandom(0, 1);
 			let sound
