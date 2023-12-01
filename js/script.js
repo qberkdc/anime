@@ -60,7 +60,7 @@ $(window).on('load', function()
 	var dmgawrd = 3;
 	var stgawrd = 5;
 	
-	var isUserHit = 0
+	var isUserHit = 1;
 	
 	let username = ""
 	
@@ -75,7 +75,8 @@ $(window).on('load', function()
 		if(touchable == 1)
 		{
 			// Call function
-			powerUp();
+			let amount = prompt("How much improve ?");
+			powerUp(amount);
 		}
 	})
 	
@@ -84,7 +85,8 @@ $(window).on('load', function()
 		if(touchable == 1)
 		{
 			// Call function
-			energyUp();
+			let amount = prompt("How much improve ?");
+			energyUp(amount);
 		}
 	})
 
@@ -128,8 +130,14 @@ $(window).on('load', function()
 	function powerUp()
 	{
 		// Calculate prices
-		var price = 15 * damage_level;
+		var price = amount * ( 15 * damage_level );
 		var needs = price - coin;
+		
+		if(!ParseInt(amount))
+		{
+			alert("Wrong amount");
+			return;
+		}
 		
 		// Block the punch
 		touchable = 0;
@@ -150,7 +158,7 @@ $(window).on('load', function()
 		else
 		{
 			// Purchase success
-			damage_level += 1; coin -= price;
+			damage_level += amount; coin -= price;
 			var playAudio = new Audio('sound/upgrade_success.mp3'); playAudio.play();
 			$('.health').html(`Upgrade successfull: ${damage_level} Lv`);
 			
@@ -162,11 +170,17 @@ $(window).on('load', function()
 		}
 	}
 	
-	function energyUp()
+	function energyUp(amount)
 	{
 		// Calculate prices
-		var price = 2 * maxenergy;
+		var price = amount * ( 2 * maxenergy );
 		var needs = price - coin;
+		
+		if(!ParseInt(amount))
+		{
+			alert("Wrong amount");
+			return;
+		}
 		
 		// Block the punch
 		touchable = 0;
@@ -187,7 +201,7 @@ $(window).on('load', function()
 		else
 		{
 			// Purchase success
-			maxenergy += 5; coin -= price;
+			maxenergy += amount * 5; coin -= price;
 			var playAudio = new Audio('sound/upgrade_success.mp3'); playAudio.play();
 			$('.health').html(`Upgrade successfull: ${maxenergy} Energy`);
 			
@@ -518,7 +532,7 @@ $(window).on('load', function()
 	function fg_load() {
 		setTimeout(() => {
 			document.getElementById('loading').style.display = 'none';
-			touchable = 1; died = 0;
+			touchable = 1; died = 0; isUserHit = 0;
 		}, 4250);
 	}
 
