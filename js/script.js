@@ -95,6 +95,8 @@ $(window).on('load', function()
 	$('#change-bg3').on('click', function() { $('bg').html('img', `src="images/ninmy_bg3.png"`); });
 	$('#change-bg4').on('click', function() { $('bg').html('img', `src="images/ninmy_bg4.png"`); });
 	$('#change-bg5').on('click', function() { $('bg').html('img', `src="images/ninmy_bg5.png"`); });
+	$('#change-bg6').on('click', function() { $('bg').html('img', `src="images/ninmy_bg6.png"`); });
+	$('#change-bg7').on('click', function() { $('bg').html('img', `src="images/ninmy_bg7.png"`); });
 
 	function updateHealth()
 	{
@@ -527,14 +529,4 @@ $(window).on('load', function()
 	
 	// Update health
 	updateHealth();
-	
-	// Loading screen
-	function fg_load() {
-		setTimeout(() => {
-			document.getElementById('loading').style.display = 'none';
-			touchable = 1; died = 0; isUserHit = 0;
-		}, 4250);
-	}
-
-	fg_load();
 })
