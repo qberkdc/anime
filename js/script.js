@@ -90,14 +90,55 @@ $(window).on('load', function()
 		}
 	})
 
-	$('#change-bg1').on('click', function() { let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg.png" ; $('container').css('background-image', `url(${bg_img})` ); });
-	$('#change-bg2').on('click', function() { let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg2.png" ; $('container').css('background-image', `url(${bg_img})` ); });
-	$('#change-bg3').on('click', function() { let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg3.png" ; $('container').css('background-image', `url(${bg_img})` ); });
-	$('#change-bg4').on('click', function() { let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg4.png" ; $('container').css('background-image', `url(${bg_img})` ); });
-	$('#change-bg5').on('click', function() { let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg5.png" ; $('container').css('background-image', `url(${bg_img})` ); });
-	$('#change-bg6').on('click', function() { let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg6.png" ; $('container').css('background-image', `url(${bg_img})` ); });
-	$('#change-bg7').on('click', function() { let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg7.png" ; $('container').css('background-image', `url(${bg_img})` ); });
-
+	$('#change-bg1').on('click', 
+	function()
+	{
+		 let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg.png";
+		$('container').css('background-image', `url(${bg_img})`);
+	});
+	
+	$('#change-bg2').on('click', 
+	function()
+	{
+		 let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg2.png";
+		$('container').css('background-image', `url(${bg_img})`);
+	});
+	
+	$('#change-bg3').on('click', 
+	function()
+	{
+		 let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg3.png";
+		$('container').css('background-image', `url(${bg_img})`);
+	});
+	
+	$('#change-bg4').on('click', 
+	function()
+	{
+		 let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg4.png";
+		$('container').css('background-image', `url(${bg_img})`);
+	});
+	
+	$('#change-bg5').on('click', 
+	function()
+	{
+		 let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg5.png";
+		$('container').css('background-image', `url(${bg_img})`);
+	});
+	
+	$('#change-bg6').on('click', 
+	function()
+	{
+		 let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg6.png";
+		$('container').css('background-image', `url(${bg_img})`);
+	});
+	
+	$('#change-bg17).on('click', 
+	function()
+	{
+		 let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg7.png";
+		$('container').css('background-image', `url(${bg_img})`);
+	});
+	
 	function updateHealth()
 	{
 		// Update text info
