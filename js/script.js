@@ -28,7 +28,7 @@ $(window).on('load', function()
 	}
 
 	// Variable Settings
-	var died = 0
+	var died = 1
 	var hp = 100;
 	var maxhp = 100;
 	var win = false;
@@ -518,8 +518,8 @@ $(window).on('load', function()
 	function fg_load() {
 		setTimeout(() => {
 			document.getElementById('loading').style.display = 'none';
-			touchable = 1;
-		}, 4000);
+			touchable = 1; died = 0;
+		}, 4250);
 	}
 
 	fg_load();
