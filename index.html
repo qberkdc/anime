@@ -19,9 +19,9 @@
 	</div> 
 
 	<script>
+		dead = 1; touchable = 0;
 		window.addEventListener('load', fg_load)
    		function fg_load() {
-			dead = 1; touchable = 0;
 			setTimeout(() => {
 				document.getElementById('loading').style.display = 'none';
 				dead = 0; touchable = 1;
