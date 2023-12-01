@@ -21,7 +21,9 @@
 	<script>
 		window.addEventListener('load', fg_load)
    		function fg_load() {
-        		document.getElementById('loading').style.display = 'none'
+			setTimeout(() => {
+				document.getElementById('loading').style.display = 'none'
+			}, 4000);
  		}
 	</script>
 
