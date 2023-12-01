@@ -132,7 +132,7 @@ $(window).on('load', function()
 		$('container').css('background-image', `url(${bg_img})`);
 	});
 	
-	$('#change-bg17).on('click', 
+	$('#change-bg7').on('click', 
 	function()
 	{
 		 let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg7.png";
