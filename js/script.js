@@ -28,7 +28,7 @@ $(window).on('load', function()
 	}
 
 	// Variable Settings
-	var died = 1
+	var died = 0;
 	var hp = 100;
 	var maxhp = 100;
 	var win = false;
@@ -46,7 +46,7 @@ $(window).on('load', function()
 	var exp = 0;
 	var req = 20;
 
-	var touchable = 0;
+	var touchable = 1;
 
 	let ninmy_hurt = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_hurt.png";
 	let ninmy_dead = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_dead.png";
@@ -90,13 +90,13 @@ $(window).on('load', function()
 		}
 	})
 
-	$('#change-bg1').on('click', function() { $('bg').html('img', `src="images/ninmy_bg.png"`); });
-	$('#change-bg2').on('click', function() { $('bg').html('img', `src="images/ninmy_bg2.png"`); });
-	$('#change-bg3').on('click', function() { $('bg').html('img', `src="images/ninmy_bg3.png"`); });
-	$('#change-bg4').on('click', function() { $('bg').html('img', `src="images/ninmy_bg4.png"`); });
-	$('#change-bg5').on('click', function() { $('bg').html('img', `src="images/ninmy_bg5.png"`); });
-	$('#change-bg6').on('click', function() { $('bg').html('img', `src="images/ninmy_bg6.png"`); });
-	$('#change-bg7').on('click', function() { $('bg').html('img', `src="images/ninmy_bg7.png"`); });
+	$('#change-bg1').on('click', function() { let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg.png" ; $('container').css('background-image', `url(${bg_img})` });
+	$('#change-bg2').on('click', function() { let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg2.png" ; $('container').css('background-image', `url(${bg_img})` });
+	$('#change-bg3').on('click', function() { let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg3.png" ; $('container').css('background-image', `url(${bg_img})` });
+	$('#change-bg4').on('click', function() { let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg4.png" ; $('container').css('background-image', `url(${bg_img})` });
+	$('#change-bg5').on('click', function() { let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg5.png" ; $('container').css('background-image', `url(${bg_img})` });
+	$('#change-bg6').on('click', function() { let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg6.png" ; $('container').css('background-image', `url(${bg_img})` });
+	$('#change-bg7').on('click', function() { let bg_img = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_bg7.png" ; $('container').css('background-image', `url(${bg_img})` });
 
 	function updateHealth()
 	{
