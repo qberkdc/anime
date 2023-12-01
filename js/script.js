@@ -3,7 +3,7 @@ $(window).on('load', function()
 	$('#vid-1').css('display', 'none');
 	$('#vid-2').css('display', 'none');
 	$('.win').css('display','none');
-
+	
 	// Cookie Set
 	function setCookie(cname, cvalue)
 	{
@@ -46,7 +46,7 @@ $(window).on('load', function()
 	var exp = 0;
 	var req = 20;
 
-	var touchable = 1;
+	var touchable = 0;
 
 	let ninmy_hurt = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_hurt.png";
 	let ninmy_dead = "https://raw.githubusercontent.com/qberkdc/anime/master/images/ninmy_dead.png";
@@ -511,6 +511,16 @@ $(window).on('load', function()
 	// Fix Health
 	fixHealth()
 	
-	// Update Health
+	// Update health
 	updateHealth();
+	
+	// Loading screen
+	function fg_load() {
+		setTimeout(() => {
+			document.getElementById('loading').style.display = 'none';
+			touchable = 1;
+		}, 4000);
+	}
+
+	fg_load();
 })
